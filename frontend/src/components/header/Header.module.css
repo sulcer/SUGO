@@ -1,0 +1,63 @@
+.Container {
+    display: flex;
+    margin: var(--content-margin);
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    background-color: var(--white);
+}
+
+.Logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 2px;
+}
+
+.Logo:hover img {
+    transform: rotate(0deg);
+    transition: 0.3s;
+}
+
+.Logo img {
+    transform: rotate(90deg);
+    transition: 0.3s;
+}
+
+.Logo_Text {
+    font-size: var(--heading-2);
+    font-weight: 700;
+    color: var(--red);
+}
+
+.Nav_Links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.Nav_Links a {
+    font-size: var(--heading-4);
+    font-weight: 500;
+    color: var(--secondary);
+}
+
+.Nav_Links a:hover {
+    color: var(--red);
+    transition: 0.3s;
+}
+
+.Nav_Links a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: var(--red);
+    transition: width 0.3s;
+}
+
+.Nav_Links a:hover::after {
+    width: 100%;
+    transition: width 0.3s;
+}
+    

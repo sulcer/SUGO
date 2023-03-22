@@ -1,0 +1,53 @@
+.Container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 80px;
+    background-color: var(--gray-300);
+}
+
+.Services {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.Service {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px; 
+    width: 150px;
+    height: 150px;
+    aspect-ratio: 1/1;
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 50%;
+    background-color: var(--gray);
+
+}
+
+.Service img {
+    object-fit: contain;
+}
+
+.Title {
+    font-size: var(--heading-2);
+    font-weight: 500;
+    color: var(--primary);
+    margin-top: 10px;
+}
+
+.Description {
+    font-size: var(--heading-4);
+    font-weight: 400;
+    color: var(--secondary);
+}
+
+.Service_Title {
+    font-size: var(--heading-4);
+    text-align: center;
+    font-weight: 700;
+    color: var(--primary);
+}
