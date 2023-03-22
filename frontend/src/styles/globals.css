@@ -2,7 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary: #1a202c;
+  --secondary: #2d3748;
+
+  --white: #fff;
+  --gray: #D9D9D9;
+  --gray-300: #F3F4F6;
+  --red: #e53e3e;
+
+  /*font*/
+  --heading-1: 2.5rem;
+  --heading-2: 2rem;
+  --heading-3: 1.5rem;
+  --heading-4: 1rem;
+  
+
+  --paragraph: 1.1rem;
+  --paragraph-small: 1rem;
+
+  /*margin padding*/
+  --content-margin: 0 80px;
+}
+
 body,html,main {
-  height: 100vh !important;
-  @apply bg-primary w-full;
+  box-sizing: border-box;
+  max-width: 2000px;
+  margin: 0 auto;
+  /* height: 100vh !important;
+  @apply bg-primary w-full; */
 }
