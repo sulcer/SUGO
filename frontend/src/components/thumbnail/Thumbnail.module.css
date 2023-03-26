@@ -2,7 +2,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
-    height: 100%;
     align-items: center;
     column-gap: 80px;
     height: calc(100vh - 60px);
