@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import GearIcon from '@/assets/gear-icon.svg';
+import { FC } from 'react';
 
 type ServiceItemProps = {
   name: string;
@@ -18,7 +19,7 @@ const ServiceItem = ({ name }: ServiceItemProps) => {
   );
 };
 
-const ServicesSection = () => {
+const ServicesSection: FC = () => {
   return (
     <div className={'bg-accent-3'}>
       <div className={'flex flex-col sm:mx-20 py-10'}>
