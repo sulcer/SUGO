@@ -1,0 +1,12 @@
+.container {
+  // TODO: we should use 1280px as max-width
+  // max-width: 1280px;
+  width: 100%;
+  margin: auto;
+
+  main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
