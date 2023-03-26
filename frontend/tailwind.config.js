@@ -8,6 +8,8 @@ module.exports = {
         secondary: '#ffffff',
         accent: '#222222',
         'accent-2': '#e53e3e',
+        'accent-3': '#F3F4F6',
+        'accent-4': '#D9D9D9',
       },
     },
   },
