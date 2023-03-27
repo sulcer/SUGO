@@ -1,0 +1,24 @@
+
+.NavLinks {
+
+  a {
+    &:hover {
+      transition: 0.3s;
+
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background-color: var(--red);
+      transition: width 0.3s;
+    }
+
+    &:hover:after {
+      width: 100%;
+      transition: width 0.3s;
+    }
+  }
+}
