@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { LayoutProvider, Services, Strengths, Thumbnail, About } from '@/components';
+import {LayoutProvider, Services, Strengths, Thumbnail, About} from '@/components';
 
 export default function Home() {
   return (

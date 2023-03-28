@@ -25,7 +25,7 @@ const CompanyTimeline:FC<CompanyTimelineProps> = ({ items }) => {
                             <p className="text-sm">{item.title}</p>
                         </div>
                     </div>
-                    {!item.present && <div className="h-14 w-0.5 bg-gray-500 ml-8 opacity-30 my-0.5"/>}
+                    {!item.present && <div className="h-14 w-0.5 bg-gray-500 ml-8 opacity-30 my-0.5" key={index}/>}
                 </>
             ))}
         </div>
