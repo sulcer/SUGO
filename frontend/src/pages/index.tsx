@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import {LayoutProvider, Services, Strengths, Thumbnail, About} from '@/components';
+import {LayoutProvider, Services, Strengths, Thumbnail, About, Gallery} from '@/components';
 
 export default function Home() {
   return (
@@ -15,6 +15,7 @@ export default function Home() {
         <Services />
         <Strengths />
         <About />
+        <Gallery />
       </LayoutProvider>
     </>
   );
