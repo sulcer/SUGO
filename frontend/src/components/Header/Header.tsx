@@ -21,12 +21,12 @@ const NavigationLink: FC<PropsWithChildren & { link?: string }> = ({
 const Header = () => {
   return (
     <div className={'flex flex-row mx-4 sm:mx-20 mt-4'}>
-      <div className={'flex flex-row grow'}>
+      <Link className={'flex flex-row grow'} href={'/'}>
         <h1 className={'font-bold text-accent-2 text-3xl'}>SUG</h1>
         <div className={'flex items-center'}>
           <Image src={GearIcon} alt="Logo" width={30} height={30} />
         </div>
-      </div>
+      </Link>
       <div
         className={classNames(
           'flex flex-row items-center gap-3 sm:gap-8',
@@ -34,7 +34,12 @@ const Header = () => {
         )}
       >
         {routes.map((route, index) => (
-          <NavigationLink key={index}>{route}</NavigationLink>
+          <NavigationLink
+            key={index}
+            link={route.toLowerCase().split(' ').join('-')}
+          >
+            {route}
+          </NavigationLink>
         ))}
       </div>
     </div>
