@@ -8,3 +8,4 @@ export { default as Gallery } from './Gallery/Gallery';
 export { default as MachineParkGallery } from './MachineParkGallery/MachineParkGallery';
 export { default as MachineImageCard } from './MachineImageCard/MachineImageCard';
 export * from './LayoutProvider/LayoutProvider';
+export * from './ContactForm/ContactForm';

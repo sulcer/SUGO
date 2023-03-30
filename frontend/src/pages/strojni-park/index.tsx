@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import { LayoutProvider, MachineParkGallery } from '@/components';
+import { MachineParkGallery } from '@/components';
 
 const Headline = () => (
   <div className={'mx-16 mt-14'}>
@@ -21,10 +21,9 @@ const MachineParkPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <LayoutProvider>
-        <Headline />
-        <MachineParkGallery />
-      </LayoutProvider>
+
+      <Headline />
+      <MachineParkGallery />
     </>
   );
 };
