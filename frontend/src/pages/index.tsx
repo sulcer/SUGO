@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import {LayoutProvider, Services, Strengths, Thumbnail, About, Gallery} from '@/components';
+import { Services, Strengths, Thumbnail, About, Gallery } from '@/components';
 
 export default function Home() {
   return (
@@ -10,13 +10,12 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <LayoutProvider>
-        <Thumbnail />
-        <Services />
-        <Strengths />
-        <About />
-        <Gallery />
-      </LayoutProvider>
+
+      <Thumbnail />
+      <Services />
+      <Strengths />
+      <About />
+      <Gallery />
     </>
   );
 }

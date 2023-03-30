@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import { LayoutProvider, MachineParkGallery } from '@/components';
+import { MachineParkGallery } from '@/components';
 
 const Headline = () => (
   <div className={'mx-16 mt-14'}>
