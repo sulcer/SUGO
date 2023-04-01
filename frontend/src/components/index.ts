@@ -7,5 +7,8 @@ export { default as ServicesCounter } from './ServicesCounter/ServicesCounter';
 export { default as Gallery } from './Gallery/Gallery';
 export { default as MachineParkGallery } from './MachineParkGallery/MachineParkGallery';
 export { default as MachineImageCard } from './MachineImageCard/MachineImageCard';
+export { default as ProductImageCard } from './ProductImageCard/ProductImageCard';
+export { default as ProductsGallery } from './ProductsGallery/ProductsGallery';
+
 export * from './LayoutProvider/LayoutProvider';
 export * from './ContactForm/ContactForm';

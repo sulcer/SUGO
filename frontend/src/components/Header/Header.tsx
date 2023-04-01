@@ -5,7 +5,7 @@ import { classNames } from '@/utils/classNames';
 import styles from './Header.module.scss';
 import GearIcon from '@/assets/gear-icon.svg';
 
-const routes = ['Strojni park', 'Naši izdelki', 'Kontakt'];
+const routes = ['Strojni park', 'Izdelki', 'Kontakt'];
 
 const NavigationLink: FC<PropsWithChildren & { link?: string }> = ({
   children,
