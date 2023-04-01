@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 const StrengthsSection: FC = () => {
   return (
-    <div className={'my-8 flex flex-col items-center gap-8 mx-4 sm:mx-20'}>
+    <div className={'my-8 flex flex-col items-center gap-8 mx-4 sm:mx-20 mt-16'}>
       <h1 className={'text-center text-3xl font-bold'}>Naše prednosti</h1>
       <div
         className={

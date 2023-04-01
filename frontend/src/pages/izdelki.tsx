@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from "next/head";
 import {ProductsGallery} from "@/components";
+import Headline from "@/components/Headline/Headline";
 
 const Products = () => {
     return (
@@ -11,7 +12,7 @@ const Products = () => {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-
+            <Headline  description={'Naši izdelki'} title={'Izdelki'}/>
             <ProductsGallery />
         </>
     );

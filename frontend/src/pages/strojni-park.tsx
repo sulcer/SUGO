@@ -1,16 +1,9 @@
 import React from 'react';
 import Head from 'next/head';
 import { MachineParkGallery } from '@/components';
+import Headline from "@/components/Headline/Headline";
 
-const Headline = () => (
-    <div className={'mx-16 mt-14'}>
-        <h1 className={'text-2xl font-bold'}>Strojni park</h1>
-        <p className={'text-lg'}>
-            Sodobno opremljen strojni park za reševanje tudi najbolj zahtevnih
-            problemov
-        </p>
-    </div>
-);
+
 
 const MachineParkPage = () => {
     return (
@@ -22,7 +15,7 @@ const MachineParkPage = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <Headline />
+            <Headline  description={'Sodobno opremljen strojni park za reševanje tudi najbolj zahtevnih problemov'} title={'Strojni park'}/>
             <MachineParkGallery />
         </>
     );

@@ -8,14 +8,12 @@ type ServiceItemProps = {
 
 const ServiceItem = ({ name }: ServiceItemProps) => {
   return (
-    <div
-      className={
-        'flex flex-col items-center gap-2 justify-center bg-accent-4 rounded-full h-48 w-48'
-      }
-    >
-      <Image src={GearIcon} alt={name} width={25} height={25} />
-      <p className={'text-center'}>{name}</p>
-    </div>
+      <div className={'flex flex-col items-center gap-2'}>
+        <div className={'flex flex-col items-center gap-2 justify-center bg-accent-4 rounded-full h-24 w-24'}>
+          <Image src={GearIcon} alt={name} width={25} height={25} />
+        </div>
+        <p>{name}</p>
+      </div>
   );
 };
 

@@ -26,10 +26,10 @@ const CompanyTimeLine = [
     }]
 const About:FC = () => {
     return (
-        <div className="px-20 my-5">
+        <div className="px-5 sm:px-20 sm:my-16">
             <h1 className="text-3xl font-bold mb-5">O nas</h1>
             <div className="flex flex-row flex-wrap justify-between">
-                <div className="w-4/6 flex flex-col gap-5">
+                <div className="w-full sm:w-4/6 flex flex-col gap-5">
                     <p>
                         Kot družinsko podjetje stremimo h konstantnemu razvoju in prilagojevanju potrebam naših strank, kar zagotavljamo z neprenehnim investiranjem v strojni park ter ostale proizvodne in poslovne procese. Skrbimo za konkurenčnost na trgu, preciznost, visoko kakovost, široko paleto izdelkov, inovacije, tehnično podporo in fleksibilnost. Smo podjetje, ki se je pripravljeno soočati z novimi izzivi.
                     </p>
@@ -41,7 +41,7 @@ const About:FC = () => {
                         Naš strojni park je specializiran za s premerom 3–65mm. Obdelavo vseh materialov odlikujeta vrhunska preciznost in kakovost, da so v skladu s strogimi tehničnimi standardi.
                     </p>
                 </div>
-                <CompanyTimeline items={CompanyTimeLine} />
+                <CompanyTimeline items={CompanyTimeLine}/>
             </div>
         </div>
     );

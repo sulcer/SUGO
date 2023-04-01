@@ -13,7 +13,7 @@ interface CompanyTimelineItemProps {
 
 const CompanyTimeline:FC<CompanyTimelineProps> = ({ items }) => {
     return (
-        <div>
+        <div className="mt-8 sm:mt-0">
             {items.map((item, index) => (
                 <div key={index}>
                     <div className="flex flex-row gap-3">
