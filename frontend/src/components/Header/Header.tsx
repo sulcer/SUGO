@@ -20,7 +20,7 @@ const NavigationLink: FC<PropsWithChildren & { link?: string }> = ({
 
 const Header = () => {
   return (
-    <div className={'flex flex-row sm:mx-20 mt-5'}>
+    <div className={'flex flex-row sm:mx-20 mt-5 px-4 sm:px-0'}>
       <Link className={'flex flex-row grow'} href={'/'}>
           <Image src={Logo} alt={'Logo'} width={100} height={30} />
       </Link>
