@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { FC, PropsWithChildren } from 'react';
 import { classNames } from '@/utils/classNames';
 import styles from './Header.module.scss';
-import GearIcon from '@/assets/gear-icon.svg';
+import Logo from '@/assets/logo-no-background.png';
 
 const routes = ['Strojni park', 'Izdelki', 'Kontakt'];
 
@@ -20,12 +20,9 @@ const NavigationLink: FC<PropsWithChildren & { link?: string }> = ({
 
 const Header = () => {
   return (
-    <div className={'flex flex-row mx-4 sm:mx-20 p-4'}>
+    <div className={'flex flex-row sm:mx-20 mt-5'}>
       <Link className={'flex flex-row grow'} href={'/'}>
-        <h1 className={'font-bold text-accent-2 text-3xl'}>SUG</h1>
-        <div className={'flex items-center'}>
-          <Image src={GearIcon} alt="Logo" width={30} height={30} />
-        </div>
+          <Image src={Logo} alt={'Logo'} width={100} height={30} />
       </Link>
       <div
         className={classNames(
