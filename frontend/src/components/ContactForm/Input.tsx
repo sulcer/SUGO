@@ -7,7 +7,9 @@ const Input = forwardRef<HTMLInputElement, HTMLProps<HTMLInputElement>>(
         <label className={'font-semibold'}>{label}</label>
         <input
           {...props}
-          className={'bg-accent-4 shadow rounded p-2'}
+          className={
+            'bg-accent-4 shadow rounded p-2 border-[1px]  border-neutral-400'
+          }
           ref={ref}
         />
       </div>

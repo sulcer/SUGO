@@ -54,9 +54,19 @@ const Contact: FC = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
-        <div className={'grid grid-cols-2 sm:mx-20 my-12'}>
+        <div
+          className={
+            'flex flex-col-reverse sm:grid sm:grid-cols-2 mx-4 my-10 sm:mx-20 my-20 gap-8 sm:gap-0'
+          }
+        >
           <ContactInfo />
-          <ContactForm />
+          <div
+            className={
+              'flex flex-col justify-center bg-white border-[1px] border-accent-4 rounded-md shadow-md p-8'
+            }
+          >
+            <ContactForm />
+          </div>
         </div>
 
         <Map />
