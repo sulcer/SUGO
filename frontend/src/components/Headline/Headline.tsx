@@ -5,7 +5,7 @@ interface HeadlineProps {
     description: string;
 }
 const Headline:FC<HeadlineProps> = ({ title, description }) => (
-    <div className={'mx-16 mt-14'}>
+    <div className={'mx-20 mt-14'}>
         <h1 className={'text-2xl font-bold'}>{title}</h1>
         <p className={'text-lg'}>
             {description}
