@@ -13,10 +13,10 @@ interface CompanyTimelineItemProps {
 
 const CompanyTimeline:FC<CompanyTimelineProps> = ({ items }) => {
     return (
-        <div>
+        <div className="mt-8 sm:mt-0">
             {items.map((item, index) => (
-                <>
-                    <div className="flex flex-row gap-3" key={index}>
+                <div key={index}>
+                    <div className="flex flex-row gap-3">
                         <div className="w-16 h-16 bg-gray-300 rounded-full flex justify-center items-center">
                             {item.icon}
                         </div>
@@ -26,7 +26,7 @@ const CompanyTimeline:FC<CompanyTimelineProps> = ({ items }) => {
                         </div>
                     </div>
                     {!item.present && <div className="h-14 w-0.5 bg-gray-500 ml-8 opacity-30 my-0.5"/>}
-                </>
+                </div>
             ))}
         </div>
     );

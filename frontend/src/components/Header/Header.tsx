@@ -3,9 +3,9 @@ import Link from 'next/link';
 import { FC, PropsWithChildren } from 'react';
 import { classNames } from '@/utils/classNames';
 import styles from './Header.module.scss';
-import GearIcon from '@/assets/gear-icon.svg';
+import Logo from '@/assets/logo-no-background.png';
 
-const routes = ['Strojni park', 'Naši izdelki', 'Kontakt'];
+const routes = ['Strojni park', 'Izdelki', 'Kontakt'];
 
 const NavigationLink: FC<PropsWithChildren & { link?: string }> = ({
   children,
@@ -20,13 +20,10 @@ const NavigationLink: FC<PropsWithChildren & { link?: string }> = ({
 
 const Header = () => {
   return (
-    <div className={'flex flex-row mx-4 sm:mx-20 mt-4'}>
-      <div className={'flex flex-row grow'}>
-        <h1 className={'font-bold text-accent-2 text-3xl'}>SUG</h1>
-        <div className={'flex items-center'}>
-          <Image src={GearIcon} alt="Logo" width={30} height={30} />
-        </div>
-      </div>
+    <div className={'flex flex-row sm:mx-20 mt-5 px-4 sm:px-0'}>
+      <Link className={'flex flex-row grow'} href={'/'}>
+          <Image src={Logo} alt={'Logo'} width={100} height={30} />
+      </Link>
       <div
         className={classNames(
           'flex flex-row items-center gap-3 sm:gap-8',
@@ -34,7 +31,12 @@ const Header = () => {
         )}
       >
         {routes.map((route, index) => (
-          <NavigationLink key={index}>{route}</NavigationLink>
+          <NavigationLink
+            key={index}
+            link={route.toLowerCase().split(' ').join('-')}
+          >
+            {route}
+          </NavigationLink>
         ))}
       </div>
     </div>
