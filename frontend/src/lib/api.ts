@@ -30,5 +30,10 @@ export const getStrengths = async () => {
     return response.data;
 }
 
+export const getGallery = async () => {
+    const response = await strapiInstance.get('galleries/1?populate=*');
+    return response.data;
+}
+
 
 

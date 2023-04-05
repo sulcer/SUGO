@@ -1,6 +1,14 @@
 import Head from 'next/head';
 import { Services, Strengths, Thumbnail, About, Gallery } from '@/components';
-import {getAbout, getCompanyTimeLine, getServiceCount, getServices, getStrengths, getThumbnail} from "@/lib/api";
+import {
+    getAbout,
+    getCompanyTimeLine,
+    getGallery,
+    getServiceCount,
+    getServices,
+    getStrengths,
+    getThumbnail
+} from "@/lib/api";
 
 export default function Home(props: any) {
   return (
@@ -15,7 +23,7 @@ export default function Home(props: any) {
       <Services services={props.service.data.attributes.OurService} />
       <Strengths  strengths={props.strengths.data.attributes.Strengths}/>
       <About about={props.about.data.attributes.about} companyTimeline={props.companyTimeline.data.attributes.timeline}/>
-      <Gallery serviceCount={props.serviceCount.data.attributes.services} />
+      <Gallery serviceCount={props.serviceCount.data.attributes.services}  gallery={props.gallery.data.attributes.image}/>
     </>
   );
 }
@@ -27,6 +35,7 @@ export async function getServerSideProps() {
     const serviceCount = await getServiceCount();
     const service = await getServices();
     const strengths = await getStrengths();
+    const gallery = await getGallery();
 
     return {
         props: {
@@ -36,6 +45,7 @@ export async function getServerSideProps() {
             serviceCount,
             service,
             strengths,
+            gallery,
         },
     };
 }
