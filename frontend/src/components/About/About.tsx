@@ -24,8 +24,6 @@ interface AboutProps {
 
 const About:FC<AboutProps> = ({ about, companyTimeline }) => {
 
-    console.log(about);
-
     return (
         <div className="px-5 sm:px-20 sm:my-16">
             <h1 className="text-3xl font-bold mb-5">O nas</h1>
