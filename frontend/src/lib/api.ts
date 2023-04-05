@@ -35,5 +35,10 @@ export const getGallery = async () => {
     return response.data;
 }
 
+export const getMachinePark = async () => {
+    const response = await strapiInstance.get('machine-parks?populate=*');
+    return response.data;
+}
+
 
 

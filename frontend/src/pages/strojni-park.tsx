@@ -2,10 +2,9 @@ import React from 'react';
 import Head from 'next/head';
 import { MachineParkGallery } from '@/components';
 import Headline from "@/components/Headline/Headline";
+import {getMachinePark} from "@/lib/api";
 
-
-
-const MachineParkPage = () => {
+const MachineParkPage = (props: any) => {
     return (
         <>
             <Head>
@@ -16,9 +15,19 @@ const MachineParkPage = () => {
             </Head>
 
             <Headline  description={'Sodobno opremljen strojni park za reševanje tudi najbolj zahtevnih problemov'} title={'Strojni park'}/>
-            <MachineParkGallery />
+            <MachineParkGallery  machinePark={props.machinePark}/>
         </>
     );
 };
+
+export async function getServerSideProps() {
+    const machinePark = await getMachinePark();
+
+    return {
+        props: {
+            machinePark,
+        },
+    };
+}
 
 export default MachineParkPage;

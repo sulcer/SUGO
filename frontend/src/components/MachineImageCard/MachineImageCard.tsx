@@ -7,12 +7,15 @@ type MachineImageCardProps = {
   alt: string;
   name: string;
   info: string;
+  width: number;
+  height: number;
 };
 
-const MachineImageCard = ({ src, alt, name, info }: MachineImageCardProps) => {
+//TODO image div/wrapper needs to be fixed
+const MachineImageCard = ({ src, alt, name, info, width, height }: MachineImageCardProps) => {
   return (
     <div className={styles.imageWrapper}>
-      <Image src={src} alt={alt} className={'rounded-md'} />
+      <Image src={src} alt={alt} className={'rounded-md'} width={width} height={height}/>
       <div className={styles.content}>
         <h1
           className={
