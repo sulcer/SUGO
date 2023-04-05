@@ -1,7 +1,8 @@
 import Head from 'next/head';
 import { Services, Strengths, Thumbnail, About, Gallery } from '@/components';
+import {getAbout, getCompanyTimeLine, getServiceCount, getServices, getStrengths, getThumbnail} from "@/lib/api";
 
-export default function Home() {
+export default function Home(props: any) {
   return (
     <>
       <Head>
@@ -10,11 +11,31 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Thumbnail />
-      <Services />
-      <Strengths />
-      <About />
-      <Gallery />
+      <Thumbnail thumbnail={props.thumbnail.data.attributes.Landing}/>
+      <Services services={props.service.data.attributes.OurService} />
+      <Strengths  strengths={props.strengths.data.attributes.Strengths}/>
+      <About about={props.about.data.attributes.about} companyTimeline={props.companyTimeline.data.attributes.timeline}/>
+      <Gallery serviceCount={props.serviceCount.data.attributes.services} />
     </>
   );
+}
+
+export async function getServerSideProps() {
+    const thumbnail = await getThumbnail();
+    const about = await getAbout();
+    const companyTimeline = await getCompanyTimeLine();
+    const serviceCount = await getServiceCount();
+    const service = await getServices();
+    const strengths = await getStrengths();
+
+    return {
+        props: {
+            thumbnail,
+            about,
+            companyTimeline,
+            serviceCount,
+            service,
+            strengths,
+        },
+    };
 }

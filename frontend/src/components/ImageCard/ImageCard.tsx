@@ -7,17 +7,23 @@ interface ImageCardProps {
     alt: string;
 }
 const ImageCard:FC<ImageCardProps> = ({ src, alt }) => {
-    const [isEnlarged, setIsEnlarged] = useState<boolean>(false);
+    const [isEnlarged, setIsEnlarged] = useState(false);
 
     const handleClick = () => {
-        setIsEnlarged(!isEnlarged);
+        setIsEnlarged(true);
+        document.body.style.overflow = 'hidden';
+    };
+
+    const handleClose = () => {
+        setIsEnlarged(false);
+        document.body.style.overflow = 'auto';
     };
 
     return (
         <div className="sm:w-1/4">
-            <div className={`${styles.imageWrapper} ${isEnlarged && styles.enlargedImageWrapper}`}>
-                <div className={`${styles.overlay} ${isEnlarged && styles.showOverlay}`} onClick={handleClick}></div>
-                <Image src={src} alt={alt} className={`${styles.image} ${isEnlarged && styles.enlargedImage} ${isEnlarged && styles.enlarged} rounded-md shadow-md`} onClick={handleClick}/>
+            <div className={`${styles.imageWrapper} ${isEnlarged ? styles.enlargedImageWrapper : ''}`}>
+                {isEnlarged && (<div className={`${styles.overlay} ${isEnlarged ? styles.showOverlay : ''}`} onClick={handleClose}></div>)}
+                <Image src={src} alt={alt} className={`${styles.image} ${isEnlarged ? styles.enlargedImage : ''}`} onClick={handleClick} />
             </div>
         </div>
     );

@@ -1,12 +1,16 @@
 import React, { FC } from 'react';
 import CountUp, { useCountUp } from 'react-countup';
 
-const ServicesCounter: FC = () => {
+
+interface ServicesCounterProps {
+  serviceCount: {name: string, count: number}[];
+}
+const ServicesCounter:FC<ServicesCounterProps> = ({ serviceCount }) => {
   const countUpRef = React.useRef(null);
   useCountUp({
     ref: countUpRef,
     start: 0,
-    end: 10,
+    end: serviceCount[0].count,
     enableScrollSpy: true,
   });
 
@@ -20,26 +24,26 @@ const ServicesCounter: FC = () => {
         <div className="w-14 h-14 bg-gray-300 rounded-full flex justify-center items-center">
           <div ref={countUpRef} className="font-bold" />
         </div>
-        <p className="text-sm mt-1">let na trgu</p>
+        <p className="text-sm mt-1">{serviceCount[0].name}</p>
       </div>
       <div className={'w-full h-[1px] sm:h-16 sm:w-[1px] bg-accent-4'} />
       <div className="flex flex-col items-center">
         <div className="w-14 h-14 bg-gray-300 rounded-full flex justify-center items-center">
-          <CountUp enableScrollSpy end={17} className="font-bold" />
+          <CountUp enableScrollSpy end={serviceCount[1].count} className="font-bold" />
         </div>
-        <p className="text-sm mt-1">strojev</p>
+        <p className="text-sm mt-1">{serviceCount[1].name}</p>
       </div>
       <div className={'w-full h-[1px] sm:h-16 sm:w-[1px] bg-accent-4'} />
       <div className="flex flex-col items-center">
         <div className="w-14 h-14 bg-gray-300 rounded-full flex justify-center items-center">
           <CountUp
             enableScrollSpy
-            end={1234}
+            end={serviceCount[2].count}
             separator=""
             className="font-bold"
           />
         </div>
-        <p className="text-sm mt-1">projektov</p>
+        <p className="text-sm mt-1">{serviceCount[2].name}</p>
       </div>
     </div>
   );

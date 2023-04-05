@@ -4,6 +4,10 @@ type ServiceItemProps = {
   name: string;
 };
 
+interface ServicesSectionProps {
+    services: { name: string }[];
+}
+
 const ServiceItem = ({ name }: ServiceItemProps) => {
   return (
       <div className={'flex flex-col items-center gap-2'}>
@@ -14,7 +18,7 @@ const ServiceItem = ({ name }: ServiceItemProps) => {
   );
 };
 
-const ServicesSection: FC = () => {
+const ServicesSection:FC<ServicesSectionProps> = ({ services }) => {
   return (
     <div className={'bg-accent-3'}>
       <div className={'flex flex-col sm:mx-20 py-10'}>
@@ -23,9 +27,9 @@ const ServicesSection: FC = () => {
           <p className={'text-xl'}>Naše storitve in dejavnosti</p>
         </div>
         <div className={'flex flex-col sm:flex-row gap-8 items-center sm:justify-between'}>
-          <ServiceItem name="Struženje" />
-          <ServiceItem name="Rezkanje" />
-          <ServiceItem name="Svetovanje" />
+            {services.map((service, index) => (
+                <ServiceItem key={index} name={service.name} />
+            ))}
         </div>
       </div>
     </div>
