@@ -7,11 +7,13 @@ interface ProductImageCardProps {
     alt: string;
     name: string;
     info: string;
+    width: number;
+    height: number;
 }
-const ProductImageCard:FC<ProductImageCardProps> = ({ src, alt, name, info }) => {
+const ProductImageCard:FC<ProductImageCardProps> = ({ src, alt, name, info, width, height }) => {
     return (
         <div className={styles.imageWrapper}>
-            <Image src={src} alt={alt} className={'rounded-md'} />
+            <Image src={src} alt={alt} className={'rounded-md'} width={width} height={height}/>
             <div className={styles.content}>
                 <h1
                     className={
