@@ -2,16 +2,15 @@ import React, {FC} from 'react';
 
 interface CompanyTimelineProps {
     items: CompanyTimelineItemProps[];
+    text: any;
 }
 
 interface CompanyTimelineItemProps {
-    year: number;
-    title: string;
     icon: JSX.Element;
     present?: boolean;
 }
 
-const CompanyTimeline:FC<CompanyTimelineProps> = ({ items }) => {
+const CompanyTimeline:FC<CompanyTimelineProps> = ({ items, text }) => {
     return (
         <div className="mt-8 sm:mt-0">
             {items.map((item, index) => (
@@ -21,8 +20,8 @@ const CompanyTimeline:FC<CompanyTimelineProps> = ({ items }) => {
                             {item.icon}
                         </div>
                         <div className="flex flex-col justify-center">
-                            <p className="font-bold text-xs">{item.year}</p>
-                            <p className="text-sm">{item.title}</p>
+                            <p className="font-bold text-xs">{text[index].year}</p>
+                            <p className="text-sm">{text[index].text}</p>
                         </div>
                     </div>
                     {!item.present && <div className="h-14 w-0.5 bg-gray-500 ml-8 opacity-30 my-0.5"/>}

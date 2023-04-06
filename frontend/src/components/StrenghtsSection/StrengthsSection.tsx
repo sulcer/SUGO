@@ -1,6 +1,10 @@
 import { FC } from 'react';
 
-const StrengthsSection: FC = () => {
+interface StrengthsSectionProps {
+  strengths: {title: string, description: string}[];
+}
+
+const StrengthsSection:FC<StrengthsSectionProps> = ({ strengths }) => {
   return (
     <div
       className={'my-8 flex flex-col items-center gap-8 mx-4 sm:mx-20 mt-16'}
@@ -16,8 +20,8 @@ const StrengthsSection: FC = () => {
             <div className={'w-8 h-8 rounded-md bg-accent-4'} />
           </div>
           <div className={'flex flex-col'}>
-            <h4 className={'font-semibold text-lg'}>Fleksibilnost</h4>
-            <p>Prilagajanje individualnim željam strank</p>
+            <h4 className={'font-semibold text-lg'}>{strengths[0].title}</h4>
+            <p>{strengths[0].description}</p>
           </div>
         </div>
 
@@ -28,8 +32,8 @@ const StrengthsSection: FC = () => {
             <div className={'w-8 h-8 rounded-md bg-accent-4'} />
           </div>
           <div className={'flex flex-col'}>
-            <h4 className={'font-semibold text-lg'}>Fleksibilnost</h4>
-            <p>Prilagajanje individualnim željam strank</p>
+            <h4 className={'font-semibold text-lg'}>{strengths[1].title}</h4>
+            <p>{strengths[1].description}</p>
           </div>
         </div>
         <div className={'w-full h-[1px] sm:h-32 sm:w-[1px] bg-accent-4'} />
@@ -39,8 +43,8 @@ const StrengthsSection: FC = () => {
             <div className={'w-8 h-8 rounded-md bg-accent-4'} />
           </div>
           <div className={'flex flex-col'}>
-            <h4 className={'font-semibold text-lg'}>Fleksibilnost</h4>
-            <p>Prilagajanje individualnim željam strank</p>
+            <h4 className={'font-semibold text-lg'}>{strengths[2].title}</h4>
+            <p>{strengths[2].description}</p>
           </div>
         </div>
       </div>
