@@ -11,6 +11,12 @@ module.exports = {
         'accent-3': '#F3F4F6',
         'accent-4': '#D9D9D9',
       },
+      transformOrigin: {
+        0: '0%',
+      },
+      zIndex: {
+        '-1': '-1',
+      },
     },
   },
   plugins: [require('@tailwindcss/typography')],
