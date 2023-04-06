@@ -19,8 +19,10 @@ const Map = () => {
 
 const ContactInfo = () => {
   return (
-    <div className={'flex flex-col gap-2'}>
-      <h1 className={'font-bold text-3xl text-accent-2'}>Kontakt</h1>
+    <div className={'flex flex-col gap-2 ml-10 my-8'}>
+      <h1 className={'font-bold text-3xl text-accent-2 mb-4'}>
+        Kontaktirajte nas
+      </h1>
       <div className={'font-semibold'}>SUGO d.o.o.</div>
       <div>
         <b>Zastopnik:</b> Boštjan Golob, direktor
@@ -56,16 +58,15 @@ const Contact: FC = () => {
       <div>
         <div
           className={
-            'flex flex-col-reverse sm:grid sm:grid-cols-2 mx-4 my-10 sm:mx-20 my-20 gap-8 sm:gap-0'
+            'flex flex-col sm:grid sm:grid-cols-2 rounded border-2 border-accent m-4 sm:m-20'
           }
         >
-          <ContactInfo />
-          <div
-            className={
-              'flex flex-col justify-center bg-white border-[1px] border-accent-4 rounded-md shadow-md p-8'
-            }
-          >
+          <div className={'rounded p-4'}>
             <ContactForm />
+          </div>
+
+          <div className={'flex flex-col bg-neutral-900 text-white p-4'}>
+            <ContactInfo />
           </div>
         </div>
 
