@@ -9,6 +9,7 @@ export const ContactForm: FC = () => {
   const [captcha, setCaptcha] = useState(false);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    setCaptcha(false);
     e.preventDefault();
     await fetch('/api/contact', {
       method: 'POST',
