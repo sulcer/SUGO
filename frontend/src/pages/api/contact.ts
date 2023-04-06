@@ -10,8 +10,8 @@ type Data = {
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'youremail@gmail.com',
-    pass: 'yourpassword',
+    user: process.env.EMAIL,
+    pass: process.env.EMAIL_PASS,
   },
 });
 
@@ -22,8 +22,10 @@ export default async function handler(
   if (req.method === 'POST') {
     const { to, subject, text } = req.body;
 
+    console.log(process.env.EMAIL, process.env.EMAIL_PASS);
+
     const mailOptions = {
-      from: 'youremail@gmail.com',
+      from: process.env.EMAIL,
       to,
       subject,
       text,
