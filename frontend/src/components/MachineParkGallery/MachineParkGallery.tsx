@@ -14,8 +14,8 @@ const MachineParkGallery:FC<MachineParkGalleryProps> = ({ machinePark }) => {
             'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12'
           }
         >
-          {Array(3).fill(0).map((_, index) => (
-              <MachineImageCard src={machinePark.data[0].attributes.machine.data.attributes.url} alt={machinePark.data[0].attributes.name} name={machinePark.data[0].attributes.name} info={machinePark.data[0].attributes.description} width={500} height={50} key={index}/>
+            {machinePark.map((machine: any) => (
+                <MachineImageCard src={machine.attributes.machine.data.attributes.url} name={machine.attributes.name} info={machine.attributes.description} alt={machine.attributes.machine.data.attributes.name} height={machine.attributes.machine.data.attributes.height} width={machine.attributes.machine.data.attributes.width} key={machine.id}/>
             ))}
         </div>
       </div>
