@@ -45,5 +45,10 @@ export const getProducts = async () => {
     return response.data;
 }
 
+export const getContact = async () => {
+    const response = await strapiInstance.get('contact');
+    return response.data;
+}
+
 
 

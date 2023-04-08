@@ -1,6 +1,11 @@
 import React, { FC } from 'react';
 import { ContactForm } from '@/components';
 import Head from 'next/head';
+import {getContact} from "@/lib/api";
+
+interface ContactInfoProps {
+    contact: {name: string, email: string, phone: string, address: string, taxNumber: string, representative: string, registrationNumber: string}
+}
 
 const Map = () => {
   return (
@@ -17,36 +22,36 @@ const Map = () => {
   );
 };
 
-const ContactInfo = () => {
+const ContactInfo:FC<ContactInfoProps> = ({ contact }) => {
   return (
     <div className={'flex flex-col gap-2 ml-10 my-8'}>
       <h1 className={'font-bold text-3xl text-accent-2 mb-4'}>
         Kontaktirajte nas
       </h1>
-      <div className={'font-semibold'}>SUGO d.o.o.</div>
+      <div className={'font-semibold'}>{contact.name}</div>
       <div>
-        <b>Zastopnik:</b> Boštjan Golob, direktor
+        <b>Zastopnik:</b> {contact.representative}
       </div>
       <div>
-        <b>Naslov:</b> Spodnji Jakobski Dol 45, 2222 Jakobski dol
+        <b>Naslov:</b> {contact.address}
       </div>
       <div>
-        <b>Telefon:</b> +386 41 555 555
+        <b>Telefon:</b> {contact.phone}
       </div>
       <div>
-        <b>E-pošta:</b> sugo@mail.com
+        <b>E-pošta:</b> {contact.email}
       </div>
       <div>
-        <b>Davčna številka:</b> 59203676
+        <b>Davčna številka:</b> {contact.taxNumber}
       </div>
       <div>
-        <b>Matična številka: </b>8550859000
+        <b>Matična številka:</b> {contact.registrationNumber}
       </div>
     </div>
   );
 };
 
-const Contact: FC = () => {
+const Contact: FC = (props: any) => {
   return (
     <>
       <Head>
@@ -66,7 +71,7 @@ const Contact: FC = () => {
           </div>
 
           <div className={'flex flex-col bg-neutral-900 text-white p-4'}>
-            <ContactInfo />
+            <ContactInfo contact={props.contact.data.attributes.contact}/>
           </div>
         </div>
 
@@ -77,3 +82,13 @@ const Contact: FC = () => {
 };
 
 export default Contact;
+
+export async function getServerSideProps() {
+    const contact = await getContact();
+
+    return {
+        props: {
+            contact,
+        },
+    };
+}
