@@ -21,9 +21,9 @@ export default function Home(props: any) {
       </Head>
       <Thumbnail thumbnail={props.thumbnail.data.attributes.Landing}/>
       <Services services={props.service.data.attributes.OurService} />
-      <Strengths  strengths={props.strengths.data.attributes.Strengths}/>
+      <Strengths strengths={props.strengths.data.attributes.Strengths}/>
       <About about={props.about.data.attributes.about} companyTimeline={props.companyTimeline.data.attributes.timeline}/>
-      <Gallery serviceCount={props.serviceCount.data.attributes.services}  gallery={props.gallery.data.attributes.image}/>
+      <Gallery serviceCount={props.serviceCount.data.attributes.services} gallery={props.gallery.data}/>
     </>
   );
 }
