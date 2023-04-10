@@ -7,8 +7,6 @@ interface ThumbnailProps {
   thumbnail: { short: string; heading: string };
 }
 
-const imageUrl = '../../assets/gallery/test.jpeg';
-
 const Thumbnail: FC<ThumbnailProps> = ({ thumbnail }) => {
   return (
     <div className={styles.Container}>
