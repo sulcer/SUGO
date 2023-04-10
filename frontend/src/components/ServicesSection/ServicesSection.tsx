@@ -45,7 +45,7 @@ const ServicesSection: FC<ServicesSectionProps> = ({ services }) => {
         </div>
         <div
           className={classNames(
-            'flex flex-col sm:flex-row gap-12 items-center sm:justify-between sm:my-5',
+            'flex flex-col sm:flex-row gap-20 lg:gap-52 items-center justify-end',
             styles.ServiceSelector
           )}
         >
