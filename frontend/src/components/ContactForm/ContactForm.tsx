@@ -1,16 +1,33 @@
-import React, { FC, FormEvent, useState } from 'react';
+import React, { FC, FormEvent, useCallback, useEffect, useState } from 'react';
 import Input from '@/components/ContactForm/Input';
 import ReCAPTCHA from 'react-google-recaptcha';
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 export const ContactForm: FC = () => {
   const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('');
   const [text, setText] = useState('');
-  const [captcha, setCaptcha] = useState(false);
+  const [verified, setVerified] = useState(false);
+  const { executeRecaptcha } = useGoogleReCaptcha();
+
+  const handleReCaptchaVerify = async () => {
+    if (!executeRecaptcha) {
+      console.log('Execute recaptcha not yet available');
+      return;
+    }
+
+    const token = await executeRecaptcha();
+    setVerified(!!token);
+    // Do whatever you want with the token
+  };
+
+  useEffect(() => {
+    handleReCaptchaVerify();
+  }, [executeRecaptcha]);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    setCaptcha(false);
     e.preventDefault();
+
     await fetch('/api/contact', {
       method: 'POST',
       headers: {
@@ -61,12 +78,7 @@ export const ContactForm: FC = () => {
           Sporočilo
         </label>
       </div>
-      <ReCAPTCHA
-        sitekey={process.env.NEXT_PUBLIC_SITE_KEY as string}
-        onChange={() => setCaptcha(true)}
-      />
       <button
-        disabled={!captcha}
         className={
           'bg-accent text-white py-2 px-8 rounded w-full sm:w-fit disabled:opacity-90 disabled:cursor-not-allowed'
         }
