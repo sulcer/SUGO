@@ -1,6 +1,5 @@
-import React, { FC, FormEvent, useCallback, useEffect, useState } from 'react';
+import React, { FC, FormEvent, useEffect, useState } from 'react';
 import Input from '@/components/ContactForm/Input';
-import ReCAPTCHA from 'react-google-recaptcha';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 export const ContactForm: FC = () => {
@@ -18,16 +17,17 @@ export const ContactForm: FC = () => {
 
     const token = await executeRecaptcha();
     setVerified(!!token);
-    // Do whatever you want with the token
   };
 
   useEffect(() => {
     handleReCaptchaVerify();
-  }, [executeRecaptcha]);
+    return () => {
+      setVerified(false);
+    };
+  }, [executeRecaptcha, handleReCaptchaVerify]);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     await fetch('/api/contact', {
       method: 'POST',
       headers: {
@@ -79,6 +79,7 @@ export const ContactForm: FC = () => {
         </label>
       </div>
       <button
+        disabled={!verified}
         className={
           'bg-accent text-white py-2 px-8 rounded w-full sm:w-fit disabled:opacity-90 disabled:cursor-not-allowed'
         }

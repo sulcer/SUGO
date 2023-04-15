@@ -2,7 +2,6 @@ import React, { FC } from 'react';
 import { ContactForm } from '@/components';
 import Head from 'next/head';
 import { getContact } from '@/lib/api';
-import Headline from '@/components/Headline/Headline';
 
 interface ContactInfoProps {
   contact: {
