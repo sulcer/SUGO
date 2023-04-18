@@ -31,7 +31,7 @@ export const getStrengths = async () => {
 }
 
 export const getGallery = async () => {
-    const response = await strapiInstance.get('galleries/1?populate=*');
+    const response = await strapiInstance.get('galleries?populate=*');
     return response.data;
 }
 
@@ -42,6 +42,11 @@ export const getMachinePark = async () => {
 
 export const getProducts = async () => {
     const response = await strapiInstance.get('products-galleries?populate=*');
+    return response.data;
+}
+
+export const getContact = async () => {
+    const response = await strapiInstance.get('contact');
     return response.data;
 }
 

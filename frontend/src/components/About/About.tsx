@@ -1,6 +1,7 @@
 import React, {FC} from 'react';
 import {HiOutlineHome, HiOutlineMapPin, HiOutlineCog8Tooth, HiOutlineCloud} from 'react-icons/hi2';
 import CompanyTimeline from "@/components/CompanyTimeline/CompanyTimeline";
+import {chunkSubstr} from "@/utils/chunkString";
 
 const CompanyTimeLine = [
     {
@@ -23,13 +24,14 @@ interface AboutProps {
 }
 
 const About:FC<AboutProps> = ({ about, companyTimeline }) => {
-
     return (
         <div className="px-5 sm:px-20 sm:my-16">
             <h1 className="text-3xl font-bold mb-5">O nas</h1>
             <div className="flex flex-row flex-wrap justify-between">
                 <div className="w-full sm:w-4/6 flex flex-col gap-5">
-                    {about}
+                    {chunkSubstr(about).map((sentenceGroup, index) => (
+                        <p key={index} className="text-lg">{sentenceGroup}</p>
+                    ))}
                 </div>
                 <CompanyTimeline items={CompanyTimeLine}  text={companyTimeline}/>
             </div>

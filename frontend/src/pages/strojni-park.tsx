@@ -14,8 +14,8 @@ const MachineParkPage = (props: any) => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <Headline  description={'Sodobno opremljen strojni park za reševanje tudi najbolj zahtevnih problemov'} title={'Strojni park'}/>
-            <MachineParkGallery  machinePark={props.machinePark}/>
+            <Headline description={'Sodobno opremljen strojni park za reševanje tudi najbolj zahtevnih problemov'} title={'Strojni park'}/>
+            <MachineParkGallery machinePark={props.machinePark.data}/>
         </>
     );
 };
