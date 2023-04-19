@@ -83,7 +83,7 @@ const Contact: FC = (props: any) => {
 
 export default Contact;
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
     const contact = await getContact();
 
     return {

@@ -28,7 +28,7 @@ export default function Home(props: any) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
     const thumbnail = await getThumbnail();
     const about = await getAbout();
     const companyTimeline = await getCompanyTimeLine();
