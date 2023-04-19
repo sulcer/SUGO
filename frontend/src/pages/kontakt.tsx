@@ -1,10 +1,18 @@
 import React, { FC } from 'react';
 import { ContactForm } from '@/components';
 import Head from 'next/head';
-import {getContact} from "@/lib/api";
+import { getContact } from '@/lib/api';
 
 interface ContactInfoProps {
-    contact: {name: string, email: string, phone: string, address: string, taxNumber: string, representative: string, registrationNumber: string}
+  contact: {
+    name: string;
+    email: string;
+    phone: string;
+    address: string;
+    taxNumber: string;
+    representative: string;
+    registrationNumber: string;
+  };
 }
 
 const Map = () => {
@@ -22,12 +30,37 @@ const Map = () => {
   );
 };
 
-const ContactInfo:FC<ContactInfoProps> = ({ contact }) => {
+const faq = [
+  {
+    question:
+      'Kakšna je vaša izkušnja pri izdelavi CNC izdelkov in katere materiale lahko obdelujete?',
+    answer:
+      'Imamo dolgoletne izkušnje pri izdelavi CNC izdelkov in lahko obdelujemo različne materiale, vključno z aluminijem, jeklom, nerjavno pločevino, plastiko, lesom in drugimi materiali.',
+  },
+  {
+    question: 'Kakšen je vaš proces naročanja in kakšen je vaš čas izdelave?',
+    answer:
+      'Naš proces naročanja je preprost in učinkovit. Stranka lahko odda naročilo preko naše spletne strani ali preko telefona. Naš čas izdelave je odvisen od obsega naročila, vrste materiala in zahtevnosti izdelka. Običajno pa lahko končamo manjša naročila v nekaj dneh, večja naročila pa lahko trajajo nekaj tednov',
+  },
+  {
+    question:
+      'Kakšna je vaša politika glede kakovosti izdelkov in kaj storite, če stranka ni zadovoljna z izdelki?',
+    answer:
+      'Naše podjetje ima strog nadzor kakovosti in vsi naši izdelki so podvrženi strogim preizkusom, da se zagotovi njihova kakovost. Če stranka ni zadovoljna z izdelkom, bomo storili vse, kar je v naši moči, da jo popravimo ali nadomestimo izdelek.',
+  },
+];
+
+const ContactInfo: FC<ContactInfoProps> = ({ contact }) => {
   return (
     <div className={'flex flex-col gap-2 ml-10 my-8'}>
-      <h1 className={'font-bold text-3xl text-accent-2 mb-4'}>
-        Kontaktirajte nas
-      </h1>
+      <div className={'mb-4'}>
+        <h1 className={'font-bold text-3xl text-white '}>Kontaktirajte nas</h1>
+        <div className="relative">
+          <div className="border-t border-white border-2 mb-5 w-32 blur-sm absolute"></div>
+          <div className="border-t border-white border-2 mb-5 w-32 absolute"></div>
+        </div>
+      </div>
+
       <div className={'font-semibold'}>{contact.name}</div>
       <div>
         <b>Zastopnik:</b> {contact.representative}
@@ -70,8 +103,22 @@ const Contact: FC = (props: any) => {
             <ContactForm />
           </div>
 
-          <div className={'flex flex-col bg-neutral-900 text-white p-4'}>
-            <ContactInfo contact={props.contact.data.attributes.contact}/>
+          <div className={'flex flex-col bg-accent text-white p-4'}>
+            <ContactInfo contact={props.contact.data.attributes.contact} />
+          </div>
+        </div>
+        <div className={'flex flex-col mx-4 mb-4 sm:mx-20 sm:mb-20'}>
+          <h1 className={'text-2xl font-bold mb-8'}>FAQ</h1>
+          <div className={'flex flex-col sm:grid sm:grid-cols-3 gap-4'}>
+            {faq.map((item, index) => (
+              <div
+                className={'flex flex-col gap-2 bg-accent-3 rounded p-4'}
+                key={index}
+              >
+                <div className={'font-bold'}>{item.question}</div>
+                <p>{item.answer}</p>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -83,12 +130,12 @@ const Contact: FC = (props: any) => {
 
 export default Contact;
 
-export async function getStaticProps() {
-    const contact = await getContact();
+export async function getServerSideProps() {
+  const contact = await getContact();
 
-    return {
-        props: {
-            contact,
-        },
-    };
+  return {
+    props: {
+      contact,
+    },
+  };
 }

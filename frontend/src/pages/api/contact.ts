@@ -22,8 +22,6 @@ export default async function handler(
   if (req.method === 'POST') {
     const { to, subject, text } = req.body;
 
-    console.log(process.env.EMAIL, process.env.EMAIL_PASS);
-
     const mailOptions = {
       from: process.env.EMAIL,
       to,
