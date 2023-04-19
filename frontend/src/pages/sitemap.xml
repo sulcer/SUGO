@@ -1,0 +1,20 @@
+<xml version="1.0" encoding="UTF-8">
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+        <url>
+            <loc>https://sugo-gamma.vercel.app/</loc>
+            <lastmod>2023-19-04</lastmod>
+        </url>
+        <url>
+            <loc>https://sugo-gamma.vercel.app/strojni-park</loc>
+            <lastmod>2023-19-04</lastmod>
+        </url>
+        <url>
+            <loc>https://sugo-gamma.vercel.app/izdelki</loc>
+            <lastmod>2023-19-04</lastmod>
+        </url>
+        <url>
+            <loc>https://sugo-gamma.vercel.app/kontakt</loc>
+            <lastmod>2023-19-04</lastmod>
+        </url>
+    </urlset>
+</xml>
