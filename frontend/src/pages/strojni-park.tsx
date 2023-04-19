@@ -20,7 +20,7 @@ const MachineParkPage = (props: any) => {
     );
 };
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
     const machinePark = await getMachinePark();
 
     return {
