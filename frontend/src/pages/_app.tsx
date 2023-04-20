@@ -2,7 +2,8 @@ import '@/styles/globals.css';
 import { LayoutProvider } from '@/components';
 import { AppProps } from 'next/app';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
-import Head from "next/head";
+import Head from 'next/head';
+import CookieConsentBanner from '@/components/CookieBanner/CookieConsentBanner';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -12,8 +13,9 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="robots" content="all" />
       </Head>
       <GoogleReCaptchaProvider
-          reCaptchaKey={process.env.NEXT_PUBLIC_SITE_KEY as string}
+        reCaptchaKey={process.env.NEXT_PUBLIC_SITE_KEY as string}
       >
+        <CookieConsentBanner />
         <LayoutProvider>
           <Component {...pageProps} />
         </LayoutProvider>
