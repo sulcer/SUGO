@@ -33,10 +33,10 @@ const ServiceItem = ({ name, text }: ServiceItemProps) => {
 const ServicesSection: FC = () => {
   return (
     <div className={'bg-accent-3'}>
-      <div className={'flex flex-col sm:mx-20 py-12 gap-5'}>
-        <div className={'mb-3 text-center sm:text-end'}>
+      <div className={'flex flex-col sm:mx-20 py-10 gap-3'}>
+        <div className={'mb-2 text-center sm:text-end'}>
           <h1 className={'text-3xl font-bold'}>Storitve</h1>
-          <p className={'text-xl'}>Naše storitve in dejavnosti</p>
+          <p className={'text-lg'}>Naše storitve in dejavnosti</p>
         </div>
         <div
           className={classNames(
