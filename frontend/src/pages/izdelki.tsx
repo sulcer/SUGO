@@ -21,7 +21,7 @@ const Products = (props: any) => {
 
 export default Products;
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const products = await getProducts();
 
   return {

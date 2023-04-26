@@ -5,13 +5,16 @@ import styles from './ServiceSection.module.scss';
 
 type ServiceItemProps = {
   name: string;
+  text: string;
 };
 
-interface ServicesSectionProps {
-  services: { name: string }[];
-}
+const services: ServiceItemProps[] = [
+    { name: 'Struženje', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed' },
+    { name: 'Rezkanje', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed' },
+    { name: 'Svetovanje', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed' },
+]
 
-const ServiceItem = ({ name }: ServiceItemProps) => {
+const ServiceItem = ({ name, text }: ServiceItemProps) => {
   return (
     <div
       className={
@@ -29,13 +32,13 @@ const ServiceItem = ({ name }: ServiceItemProps) => {
       </div>
       <h2 className={'text-md font-bold'}>{name}</h2>
       <p className={'text-sm text-gray-500 max-w-xs'}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+          {text}
       </p>
     </div>
   );
 };
 
-const ServicesSection: FC<ServicesSectionProps> = ({ services }) => {
+const ServicesSection: FC = () => {
   return (
     <div className={'bg-accent-3'}>
       <div className={'flex flex-col sm:mx-20 py-16 gap-5'}>
@@ -50,7 +53,7 @@ const ServicesSection: FC<ServicesSectionProps> = ({ services }) => {
           )}
         >
           {services.map((service, index) => (
-            <ServiceItem key={index} name={service.name} />
+            <ServiceItem key={index} name={service.name} text={service.text}/>
           ))}
         </div>
       </div>

@@ -1,14 +1,6 @@
 import Head from 'next/head';
 import { Services, Strengths, Thumbnail, About, Gallery } from '@/components';
-import {
-    getAbout,
-    getCompanyTimeLine,
-    getGallery,
-    getServiceCount,
-    getServices,
-    getStrengths,
-    getThumbnail
-} from "@/lib/api";
+import { getAbout, getGallery } from "@/lib/api";
 
 export default function Home(props: any) {
   return (
@@ -20,32 +12,22 @@ export default function Home(props: any) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Thumbnail thumbnail={props.thumbnail.data.attributes.Landing}/>
-      <Services services={props.service.data.attributes.OurService} />
-      <Strengths strengths={props.strengths.data.attributes.Strengths}/>
-      <About about={props.about.data.attributes.about} companyTimeline={props.companyTimeline.data.attributes.timeline}/>
-      <Gallery serviceCount={props.serviceCount.data.attributes.services} gallery={props.gallery.data}/>
+      <Thumbnail />
+      <Services />
+      <Strengths />
+      <About about={props.about.data.attributes.about} />
+      <Gallery gallery={props.gallery.data}/>
     </>
   );
 }
 
 export async function getStaticProps() {
-    const thumbnail = await getThumbnail();
     const about = await getAbout();
-    const companyTimeline = await getCompanyTimeLine();
-    const serviceCount = await getServiceCount();
-    const service = await getServices();
-    const strengths = await getStrengths();
     const gallery = await getGallery();
 
     return {
         props: {
-            thumbnail,
             about,
-            companyTimeline,
-            serviceCount,
-            service,
-            strengths,
             gallery,
         },
     };
