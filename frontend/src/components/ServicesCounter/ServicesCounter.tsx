@@ -17,26 +17,26 @@ const ServicesCounter:FC = () => {
       }
     >
       <div className="flex flex-col items-center">
-        <div className="w-14 h-14 bg-gray-300 rounded-full flex justify-center items-center">
-          <div ref={countUpRef} className="font-bold" />
+        <div className="w-12 h-12 flex justify-center items-center">
+          <div ref={countUpRef} className="font-bold text-2xl" />
         </div>
         <p className="text-sm mt-1">let na trgu</p>
       </div>
       <div className={'w-full h-[1px] sm:h-16 sm:w-[1px] bg-accent-4'} />
       <div className="flex flex-col items-center">
-        <div className="w-14 h-14 bg-gray-300 rounded-full flex justify-center items-center">
-          <CountUp enableScrollSpy end={17} className="font-bold" />
+        <div className="w-12 h-12 flex justify-center items-center">
+          <CountUp enableScrollSpy end={17} className="font-bold text-2xl"/>
         </div>
         <p className="text-sm mt-1">strojev</p>
       </div>
       <div className={'w-full h-[1px] sm:h-16 sm:w-[1px] bg-accent-4'} />
       <div className="flex flex-col items-center">
-        <div className="w-14 h-14 bg-gray-300 rounded-full flex justify-center items-center">
+        <div className="w-12 h-12 flex justify-center items-center">
           <CountUp
             enableScrollSpy
             end={593}
             separator=""
-            className="font-bold"
+            className="font-bold text-2xl"
           />
         </div>
         <p className="text-sm mt-1">projektov</p>

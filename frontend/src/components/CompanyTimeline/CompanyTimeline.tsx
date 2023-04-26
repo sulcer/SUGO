@@ -31,7 +31,7 @@ const CompanyTimeline:FC = () => {
             {timeline.map((item, index) => (
                 <div key={index}>
                     <div className="flex flex-row gap-3">
-                        <div className="w-16 h-16 bg-gray-300 rounded-full flex justify-center items-center">
+                        <div className="w-16 h-16 bg-accent-2 rounded-full flex justify-center items-center">
                             {item.icon}
                         </div>
                         <div className="flex flex-col justify-center">

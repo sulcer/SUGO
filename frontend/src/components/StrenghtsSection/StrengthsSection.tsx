@@ -5,7 +5,9 @@ const StrengthsSection:FC= () => {
     <div
       className={'my-8 flex flex-col items-center gap-8 mx-4 sm:mx-20 mt-16'}
     >
-      <h1 className={'text-center text-3xl font-bold'}>Naše prednosti</h1>
+      <h1 className={'text-center text-4xl font-bold mb-5'}>
+        Zakaj <span className='text-tint'>Sugo?</span>
+      </h1>
       <div
         className={
           'flex flex-col sm:flex-row justify-center gap-10 sm:gap-20 bg-white border-[1px] w-fit border-accent-4 rounded-md shadow-md p-8'
@@ -13,7 +15,8 @@ const StrengthsSection:FC= () => {
       >
         <div className={'flex flex-row gap-4 sm:w-1/3'}>
           <div>
-            <div className={'w-8 h-8 rounded-md bg-accent-4'} />
+            <div className={'w-8 h-8 rounded-md bg-accent-4'}>
+            </div>
           </div>
           <div className={'flex flex-col'}>
             <h4 className={'font-semibold text-lg'}>Fleksibilnost</h4>
@@ -25,7 +28,8 @@ const StrengthsSection:FC= () => {
 
         <div className={'flex flex-row gap-4 sm:w-1/3'}>
           <div>
-            <div className={'w-8 h-8 rounded-md bg-accent-4'} />
+            <div className={'w-8 h-8 rounded-md bg-accent-4'}>
+            </div>
           </div>
           <div className={'flex flex-col'}>
             <h4 className={'font-semibold text-lg'}>Kvaliteta</h4>
@@ -36,7 +40,8 @@ const StrengthsSection:FC= () => {
 
         <div className={'flex flex-row gap-4 sm:w-1/3'}>
           <div>
-            <div className={'w-8 h-8 rounded-md bg-accent-4'} />
+            <div className={'w-8 h-8 rounded-md bg-accent-4'}>
+            </div>
           </div>
           <div className={'flex flex-col'}>
             <h4 className={'font-semibold text-lg'}>Preciznost</h4>
