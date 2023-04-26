@@ -1,6 +1,7 @@
 import React, {FC, useState} from 'react';
 import Image, {StaticImageData} from "next/image";
 import styles from './ImageCard.module.scss';
+import disableScroll from 'disable-scroll';
 
 interface ImageCardProps {
     src: StaticImageData;
@@ -10,15 +11,16 @@ interface ImageCardProps {
 }
 const ImageCard:FC<ImageCardProps> = ({ src, alt, width, height }) => {
     const [isEnlarged, setIsEnlarged] = useState(false);
-
     const handleClick = () => {
         setIsEnlarged(true);
         document.body.style.overflow = 'hidden';
+        disableScroll.on();
     };
 
     const handleClose = () => {
         setIsEnlarged(false);
         document.body.style.overflow = 'auto';
+        disableScroll.off();
     };
 
     return (
