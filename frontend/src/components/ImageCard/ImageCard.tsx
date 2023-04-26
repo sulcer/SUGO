@@ -13,13 +13,11 @@ const ImageCard:FC<ImageCardProps> = ({ src, alt, width, height }) => {
     const [isEnlarged, setIsEnlarged] = useState(false);
     const handleClick = () => {
         setIsEnlarged(true);
-        document.body.style.overflow = 'hidden';
         disableScroll.on();
     };
 
     const handleClose = () => {
         setIsEnlarged(false);
-        document.body.style.overflow = 'auto';
         disableScroll.off();
     };
 
