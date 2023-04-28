@@ -5,13 +5,12 @@ import {ServicesCounter} from "@/components";
 interface GalleryProps {
     gallery: any;
 }
-//TODO: flex gallery has to be grid gallery
 const Gallery:FC<GalleryProps> = ({ gallery }) => {
     return (
         <div className="relative">
             <ServicesCounter />
             <div className="w-full bg-accent-3 flex flex-col gap-10 mt-12 sm:py-20 py-8">
-                <div className="flex justify-around mx-5 flex-wrap gap-5 sm:gap-0 mt-5">
+                <div className="grid grid-cols-1 md:grid-cols-3 justify-items-center mx-5 mt-5 gap-y-12">
                     {gallery.map((image: any) => (
                         <ImageCard src={image.attributes.image.data.attributes.url} alt={image.attributes.image.data.attributes.name} key={image.id} width={image.attributes.image.data.attributes.width} height={image.attributes.image.data.attributes.height}/>
                     ))}

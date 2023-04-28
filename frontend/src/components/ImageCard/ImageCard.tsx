@@ -22,7 +22,7 @@ const ImageCard:FC<ImageCardProps> = ({ src, alt, width, height }) => {
     };
 
     return (
-        <div className="sm:w-1/4">
+        <div className="w-full md:w-3/4">
             <div className={`${styles.imageWrapper} ${isEnlarged && styles.enlargedImageWrapper}`}>
                 {isEnlarged && (<div className={`${styles.overlay} ${isEnlarged && styles.showOverlay}`} onClick={handleClose}></div>)}
                 <Image src={src} alt={alt} width={width} height={height} className={`${styles.image} ${isEnlarged && styles.enlargedImage} rounded-md shadow-md`} onClick={handleClick} />
