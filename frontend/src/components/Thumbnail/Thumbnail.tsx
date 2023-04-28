@@ -3,16 +3,12 @@ import { FC } from 'react';
 import Image from 'next/image';
 import Test from '../../assets/gallery/test.jpeg';
 
-interface ThumbnailProps {
-  thumbnail: { short: string; heading: string };
-}
-
-const Thumbnail: FC<ThumbnailProps> = ({ thumbnail }) => {
+const Thumbnail: FC = () => {
   return (
     <div className={styles.Container}>
       <div className={styles.Info}>
-        <h1 className={styles.Title}>{thumbnail.heading}</h1>
-        <p className={styles.Description}>{thumbnail.short}</p>
+        <h1 className={styles.Title}>Mehanska obdelava kovin in druge storitve</h1>
+        <p className={styles.Description}>Kakovostne storitve za vaše inovativne ideje</p>
       </div>
       <div className={styles.radialContainer}></div>
       <Image

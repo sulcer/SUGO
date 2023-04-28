@@ -1,16 +1,12 @@
 import React, { FC } from 'react';
 import CountUp, { useCountUp } from 'react-countup';
 
-
-interface ServicesCounterProps {
-  serviceCount: {name: string, count: number}[];
-}
-const ServicesCounter:FC<ServicesCounterProps> = ({ serviceCount }) => {
+const ServicesCounter:FC = () => {
   const countUpRef = React.useRef(null);
   useCountUp({
     ref: countUpRef,
     start: 0,
-    end: serviceCount[0].count,
+    end: 10,
     enableScrollSpy: true,
   });
 
@@ -21,29 +17,29 @@ const ServicesCounter:FC<ServicesCounterProps> = ({ serviceCount }) => {
       }
     >
       <div className="flex flex-col items-center">
-        <div className="w-14 h-14 bg-gray-300 rounded-full flex justify-center items-center">
-          <div ref={countUpRef} className="font-bold" />
+        <div className="w-12 h-12 flex justify-center items-center">
+          <div ref={countUpRef} className="font-bold text-2xl" />
         </div>
-        <p className="text-sm mt-1">{serviceCount[0].name}</p>
+        <p className="text-sm mt-1">let na trgu</p>
       </div>
       <div className={'w-full h-[1px] sm:h-16 sm:w-[1px] bg-accent-4'} />
       <div className="flex flex-col items-center">
-        <div className="w-14 h-14 bg-gray-300 rounded-full flex justify-center items-center">
-          <CountUp enableScrollSpy end={serviceCount[1].count} className="font-bold" />
+        <div className="w-12 h-12 flex justify-center items-center">
+          <CountUp enableScrollSpy end={17} className="font-bold text-2xl"/>
         </div>
-        <p className="text-sm mt-1">{serviceCount[1].name}</p>
+        <p className="text-sm mt-1">strojev</p>
       </div>
       <div className={'w-full h-[1px] sm:h-16 sm:w-[1px] bg-accent-4'} />
       <div className="flex flex-col items-center">
-        <div className="w-14 h-14 bg-gray-300 rounded-full flex justify-center items-center">
+        <div className="w-12 h-12 flex justify-center items-center">
           <CountUp
             enableScrollSpy
-            end={serviceCount[2].count}
+            end={593}
             separator=""
-            className="font-bold"
+            className="font-bold text-2xl"
           />
         </div>
-        <p className="text-sm mt-1">{serviceCount[2].name}</p>
+        <p className="text-sm mt-1">projektov</p>
       </div>
     </div>
   );

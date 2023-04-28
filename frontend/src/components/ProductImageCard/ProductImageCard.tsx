@@ -24,7 +24,7 @@ const ProductImageCard:FC<ProductImageCardProps> = ({ src, alt, name, info, widt
                 </h1>
                 <p
                     className={
-                        'text-white text-lg md:text-xs lg:text-sm lg:max-w-md mx-4'
+                        'text-white text-sm sm:text-lg lg:max-w-md mx-4 flex'
                     }
                 >
                     {info}

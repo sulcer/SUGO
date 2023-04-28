@@ -7,9 +7,10 @@ module.exports = {
         primary: '#000000',
         secondary: '#ffffff',
         accent: '#222222',
-        'accent-2': '#e53e3e',
-        'accent-3': '#F3F4F6',
-        'accent-4': '#D9D9D9',
+        'accent-2': '#e7f1ff',
+        'accent-3': '#f5f5f5',
+        'accent-4': '#f5f8fe',
+        tint: '#0045f6',
       },
       transformOrigin: {
         0: '0%',
