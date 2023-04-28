@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { ContactForm } from '@/components';
 import Head from 'next/head';
 import { getContact } from '@/lib/api';
+import FaqAccordion from "@/components/FaqAccordion/FaqAccordion";
 
 interface ContactInfoProps {
   contact: {
@@ -54,30 +55,32 @@ const ContactInfo: FC<ContactInfoProps> = ({ contact }) => {
   return (
     <div className={'flex flex-col gap-2 ml-10 my-8'}>
       <div className={'mb-4'}>
-        <h1 className={'font-bold text-3xl text-white '}>Kontaktirajte nas</h1>
+        <h1 className={'font-bold text-3xl text-black'}>Kontaktirajte nas</h1>
         <div className="relative">
           <div className="border-t border-white border-2 mb-5 w-32 blur-sm absolute"></div>
           <div className="border-t border-white border-2 mb-5 w-32 absolute"></div>
         </div>
       </div>
 
-      <div className={'font-semibold'}>{contact.name}</div>
-      <div>
-        <b>Zastopnik:</b> {contact.representative}
+      <div className={'font-semibold text-black'}>
+          {contact.name}
       </div>
-      <div>
+      <div className={'text-black'}>
+          <b>Zastopnik:</b> {contact.representative}
+      </div>
+      <div className={'text-black'}>
         <b>Naslov:</b> {contact.address}
       </div>
-      <div>
+      <div className={'text-black'}>
         <b>Telefon:</b> {contact.phone}
       </div>
-      <div>
+      <div className={'text-black'}>
         <b>E-pošta:</b> {contact.email}
       </div>
-      <div>
+      <div className={'text-black'}>
         <b>Davčna številka:</b> {contact.taxNumber}
       </div>
-      <div>
+      <div className={'text-black'}>
         <b>Matična številka:</b> {contact.registrationNumber}
       </div>
     </div>
@@ -96,32 +99,26 @@ const Contact: FC = (props: any) => {
       <div>
         <div
           className={
-            'flex flex-col sm:grid sm:grid-cols-2 rounded border-2 border-accent m-4 sm:m-20'
+            'flex flex-col sm:grid sm:grid-cols-2 rounded border-2 border-accent3 m-4 sm:m-20'
           }
         >
           <div className={'rounded p-4'}>
             <ContactForm />
           </div>
-
-          <div className={'flex flex-col bg-accent text-white p-4'}>
+          <div className={'flex flex-col bg-accent-3 text-white p-4'}>
             <ContactInfo contact={props.contact.data.attributes.contact} />
           </div>
         </div>
-        <div className={'flex flex-col mx-4 mb-4 sm:mx-20 sm:mb-20'}>
-          <h1 className={'text-2xl font-bold mb-8'}>FAQ</h1>
+        <div className={'flex flex-col mx-4 mb-4 sm:mx-20 sm:mb-20 h-64'}>
+          <h1 className={'text-2xl font-bold mb-8'}>Pogosto zastavljena vprašanja</h1>
           <div className={'flex flex-col sm:grid sm:grid-cols-3 gap-4'}>
             {faq.map((item, index) => (
-              <div
-                className={'flex flex-col gap-2 bg-accent-3 rounded p-4'}
-                key={index}
-              >
-                <div className={'font-bold'}>{item.question}</div>
-                <p>{item.answer}</p>
-              </div>
+                <div key={index}>
+                    <FaqAccordion question={item.question} answer={item.answer} />
+                </div>
             ))}
           </div>
         </div>
-
         <Map />
       </div>
     </>

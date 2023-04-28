@@ -45,7 +45,7 @@ export const ContactForm: FC = () => {
   };
 
   return (
-    <form className={'flex flex-col w-full gap-6'} onSubmit={handleSubmit}>
+    <form className={'flex flex-col w gap-6'} onSubmit={handleSubmit}>
       <Input
         label={'E-pošta'}
         required
