@@ -24,10 +24,9 @@ const MachineImageCard = ({ src, alt, name, info, width, height }: MachineImageC
         >
           {name}
         </h1>
-        {/*<hr className="w-48 h-[2px] mx-auto bg-gray-100 border-0 rounded" />*/}
         <p
           className={
-            'text-white text-lg md:text-xs lg:text-sm lg:max-w-md mx-4'
+            'text-white text-sm sm:text-lg lg:max-w-md mx-4 flex'
           }
         >
           {info}

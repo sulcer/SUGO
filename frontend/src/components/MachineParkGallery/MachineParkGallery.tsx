@@ -8,7 +8,7 @@ interface MachineParkGalleryProps {
 const MachineParkGallery:FC<MachineParkGalleryProps> = ({ machinePark }) => {
   return (
     <div className={'w-full bg-accent-3 mt-8 py-20'}>
-      <div className={'mx-16'}>
+      <div className={'mx-5 sm:mx-20'}>
         <div
           className={
             'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12'
