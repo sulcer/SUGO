@@ -31,8 +31,13 @@ const CookieConsentBanner = () => {
       expires={150}
       onAccept={handleAccept}
       onDecline={handleDecline}
-      // declineButtonClasses="text-xs font-bold underline hover:text-accent-1 hover:no-underline"
+      enableDeclineButton
+      declineButtonText="Zavrni"
+      declineButtonClasses="text-xs font-bold no-underline hover:text-accent-1 hover:underline"
       buttonClasses="text-xs font-bold underline hover:text-accent-1 hover:no-underline"
+      buttonStyle={{ background:"#f5f5f5", color: "black", fontSize:"13px", borderRadius:"3px"}}
+      declineButtonStyle={{background:"#222222", color: "white", fontSize: "13px"}}
+      style={{ background: "#222222"}}
     >
       <div className={'flex flex-col justify-center text-white gap-2'}>
         <p className={'text-lg font-bold'}>Spletna stran uporablja piškotke</p>
