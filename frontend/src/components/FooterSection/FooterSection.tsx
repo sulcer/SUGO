@@ -1,7 +1,9 @@
 import React, {FC} from 'react';
+import {FooterItemType} from "@/types/types";
+
 interface FooterSectionProps {
     title?: string;
-    items: { icon: JSX.Element; text: string }[];
+    items: { icon: JSX.Element; text: string, type?: FooterItemType }[];
 }
 const FooterSection:FC<FooterSectionProps> = ({ title, items }) => {
     return (
@@ -19,7 +21,11 @@ const FooterSection:FC<FooterSectionProps> = ({ title, items }) => {
                 {items.map((item, index) => (
                     <div className="flex items-center gap-1.5" key={index}>
                         {item.icon}
-                        <p className="text-white text-sm opacity-80">{item.text}</p>
+                        <p className="text-white text-sm opacity-80">
+                            {!item.type && item.text}
+                            {item.type === FooterItemType.PHONE && <a href="tel:+386 2 7205 071">{item.text}</a>}
+                            {item.type === FooterItemType.MAIL && <a href="mailto:cncgolob@gmail.com">{item.text}</a>}
+                        </p>
                     </div>
                 ))}
             </div>

@@ -18,12 +18,12 @@ const StrengthsSection:FC= () => {
       >
         <div className={'flex flex-row gap-3 sm:w-1/3 group'}>
           <div>
-            <div className={'w-8 h-8 rounded-md flex justify-center items-center group-hover:bg-accent-4 transition ease-in-out delay-150 duration-300'}>
+            <div className={'w-8 h-8 rounded-md flex justify-center items-center transition ease-in-out delay-150 duration-300'}>
               <HiOutlineCog6Tooth size={25}/>
             </div>
           </div>
           <div className={'flex flex-col mt-0.5'}>
-            <h4 className={'font-semibold text-lg mb-3 group-hover:text-tint transition ease-in-out delay-150 duration-300'}>Fleksibilnost</h4>
+            <h4 className={'font-semibold text-lg mb-3 group-hover:text-tint transition ease-in-out delay-100 duration-300'}>Fleksibilnost</h4>
             <p className='text-sm text-gray-500 group-hover:text-black transition ease-in-out delay-150 duration-300'>Prilagajanje individualnim željam in potrebam naših strank. Odlikujeta nas odzivnost in hitra izvedba naročil.</p>
           </div>
         </div>
@@ -32,12 +32,12 @@ const StrengthsSection:FC= () => {
 
         <div className={'flex flex-row gap-3 sm:w-1/3 group'}>
           <div>
-            <div className={'w-8 h-8 rounded-md flex justify-center items-center group-hover:bg-accent-4 transition ease-in-out delay-150 duration-300'}>
+            <div className={'w-8 h-8 rounded-md flex justify-center items-center transition ease-in-out delay-150 duration-300'}>
               <HiOutlineClipboardDocumentCheck size={25}/>
             </div>
           </div>
           <div className={'flex flex-col mt-0.5'}>
-            <h4 className={'font-semibold text-lg mb-3 group-hover:text-tint transition ease-in-out delay-150 duration-300'}>Kvaliteta</h4>
+            <h4 className={'font-semibold text-lg mb-3 group-hover:text-tint transition ease-in-out delay-100 duration-300'}>Kvaliteta</h4>
             <p className='text-sm text-gray-500 group-hover:text-black transition ease-in-out delay-150 duration-300'>Dosegamo vrhunsko kvaliteto storitev in izdelkov, ki so obdelani pri nas na tehnološko dovršenih strojih v lastni proizvodnji.</p>
           </div>
         </div>
@@ -45,12 +45,12 @@ const StrengthsSection:FC= () => {
 
         <div className={'flex flex-row gap-3 sm:w-1/3 group'}>
           <div>
-            <div className={'w-8 h-8 rounded-md flex justify-center items-center group-hover:bg-accent-4 transition ease-in-out delay-150 duration-300'}>
+            <div className={'w-8 h-8 rounded-md flex justify-center items-center transition ease-in-out delay-150 duration-300'}>
               <HiOutlineAdjustmentsHorizontal size={25}/>
             </div>
           </div>
           <div className={'flex flex-col mt-0.5'}>
-            <h4 className={'font-semibold text-lg mb-3 group-hover:text-tint transition ease-in-out delay-150 duration-300'}>Preciznost</h4>
+            <h4 className={'font-semibold text-lg mb-3 group-hover:text-tint transition ease-in-out delay-100 duration-300'}>Preciznost</h4>
             <p className='text-sm text-gray-500 group-hover:text-black transition ease-in-out delay-150 duration-300'>Precizna strojna izdelava in obdelava izdelkov, ki jih odlikujejo bogate dolgoletne izkušnje ter strokovnost našega kadra.</p>
           </div>
         </div>

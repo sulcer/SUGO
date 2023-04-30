@@ -2,6 +2,8 @@ import React, {FC} from 'react';
 import {FaFacebook} from 'react-icons/fa';
 import {HiPhone, HiPrinter, HiOutlineEnvelope, HiOutlineBuildingOffice2, HiOutlineMapPin, HiOutlineHome, HiOutlineGlobeEuropeAfrica} from 'react-icons/hi2';
 import FooterSection from "@/components/FooterSection/FooterSection";
+import {FooterItemType} from "@/types/types";
+import Link from "next/link";
 
 const firstMenuSection = {
     title: "PODJETJE",
@@ -29,15 +31,18 @@ const secondMenuSection = {
     items: [
         {
             icon: <HiPhone className="text-white opacity-80"/>,
-            text: "+386 40 123 456"
+            text: "+386 40 123 456",
+            type: FooterItemType.PHONE
         },
         {
             icon: <HiPrinter className="text-white opacity-80"/>,
-            text: "+386 40 123 456"
+            text: "+386 40 123 456",
+            type: FooterItemType.PHONE
         },
         {
             icon: <HiOutlineEnvelope className="text-white opacity-80"/>,
             text: "cncgolob@gmail.com",
+            type: FooterItemType.MAIL
         }]
 }
 
@@ -58,7 +63,16 @@ const Footer:FC = () => {
                 <FooterSection title={secondMenuSection.title} items={secondMenuSection.items}/>
                 <FooterSection items={thirdMenuSection.items}/>
             </div>
-            <div className="border-t border-white pb-10 mt-20 opacity-50"/>
+            <div className="border-t border-white mt-20 opacity-50"/>
+            <div className='flex justify-between mx-20 py-3'>
+                <p className="text-white text-center text-xs opacity-80">© 2023 SUGO d.o.o. Vse pravice pridržane.</p>
+                <Link
+                    href="/varovanje-osebnih-podatkov"
+                    className="text-white text-center text-xs opacity-80 hover:opacity-100"
+                >
+                    Izjava o varovanju osebnih podatkov
+                </Link>
+            </div>
         </div>
     );
 };

@@ -1,6 +1,7 @@
 import React, { FC, FormEvent, useEffect, useState } from 'react';
 import Input from '@/components/ContactForm/Input';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import {motion} from "framer-motion"
 
 export const ContactForm: FC = () => {
   const [email, setEmail] = useState('');
@@ -78,15 +79,21 @@ export const ContactForm: FC = () => {
           Sporočilo
         </label>
       </div>
-      <button
-        disabled={!verified}
-        className={
-          'bg-accent text-white py-2 px-8 rounded w-full sm:w-fit disabled:opacity-90 disabled:cursor-not-allowed'
-        }
-        type="submit"
-      >
-        Pošlji
-      </button>
+      <motion.div
+          className="box w-24"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          transition={{ type: "spring", stiffness: 400, damping: 15 }}>
+        <button
+            disabled={!verified}
+            className={
+              'bg-accent text-white py-2 px-8 rounded w-full sm:w-fit disabled:opacity-90 disabled:cursor-not-allowed'
+            }
+            type="submit"
+        >
+          Pošlji
+        </button>
+      </motion.div>
     </form>
   );
 };
