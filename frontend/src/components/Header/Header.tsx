@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { FC, PropsWithChildren } from 'react';
 import { classNames } from '@/utils/classNames';
 import styles from './Header.module.scss';
-import Logo from '@/assets/SUGO-logo.png';
+import Logo from '@/assets/logo-sugo.png';
 
 const routes = ['Strojni park', 'Izdelki', 'Kontakt'];
 
@@ -20,7 +20,7 @@ const NavigationLink: FC<PropsWithChildren & { link?: string }> = ({
 
 const Header = () => {
   return (
-    <div className={'flex flex-row sm:mx-20 my-1 px-4 sm:px-0'}>
+    <div className={'flex flex-row sm:mx-20 my-5 px-4 sm:px-0'}>
       <Link className={'flex flex-row grow'} href={'/'}>
         <Image src={Logo} alt={'Logo'} width={100} height={30} />
       </Link>

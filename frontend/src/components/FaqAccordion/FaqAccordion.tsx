@@ -15,5 +15,4 @@ const FaqAccordion:FC<FaqAccordionProps> = ({ question, answer }) => {
         </div>
     );
 };
-
 export default FaqAccordion;
