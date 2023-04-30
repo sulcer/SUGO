@@ -2,7 +2,8 @@ import React from 'react';
 import Head from 'next/head';
 import { ProductsGallery } from '@/components';
 import Headline from '@/components/Headline/Headline';
-import { getProducts } from '@/lib/api';
+import {motion} from "framer-motion";
+import {getProducts} from "@/lib/api";
 
 const Products = (props: any) => {
   return (
@@ -13,7 +14,9 @@ const Products = (props: any) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Headline description={'Naši izdelki'} title={'Izdelki'} />
+      <motion.div animate={{ x: 0 }} initial={{ x: -100, speed: 5}}>
+          <Headline description={'Naši izdelki'} title={'Izdelki'} />
+      </motion.div>
       <ProductsGallery products={props.products.data} />
     </>
   );

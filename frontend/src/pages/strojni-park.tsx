@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { MachineParkGallery } from '@/components';
 import Headline from "@/components/Headline/Headline";
 import {getMachinePark} from "@/lib/api";
+import {motion} from "framer-motion";
 
 const MachineParkPage = (props: any) => {
     return (
@@ -13,7 +14,9 @@ const MachineParkPage = (props: any) => {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <Headline description={'Sodobno opremljen strojni park za reševanje tudi najbolj zahtevnih problemov'} title={'Strojni park'}/>
+            <motion.div animate={{ x: 0 }} initial={{ x: -100, speed: 5}}>
+                <Headline description={'Sodobno opremljen strojni park za reševanje tudi najbolj zahtevnih problemov'} title={'Strojni park'}/>
+            </motion.div>
             <MachineParkGallery machinePark={props.machinePark.data}/>
         </>
     );

@@ -1,17 +1,27 @@
-import { FC } from 'react';
+import {FC, useRef} from 'react';
 import {
   HiOutlineClipboardDocumentCheck,
   HiOutlineCog6Tooth,
   HiOutlineAdjustmentsHorizontal
 } from "react-icons/hi2";
+import {useInView} from "framer-motion"
 
 const StrengthsSection:FC= () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
     <div className={'my-8 flex flex-col items-center gap-8 mx-4 sm:mx-20 mt-16'}>
       <h1 className={'text-center text-4xl font-bold mb-5'}>
         Zakaj <span className='text-tint'>Sugo?</span>
       </h1>
       <div
+          ref={ref}
+          style={{
+            transform: isInView ? "none" : "translateY(100px)",
+            opacity: isInView ? 1 : 0,
+            transition: "all cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+          }}
         className={
           'flex flex-col sm:flex-row justify-center gap-10 sm:gap-20 bg-white border-[1px] w-fit border-accent-4 rounded-md shadow-md p-8'
         }
