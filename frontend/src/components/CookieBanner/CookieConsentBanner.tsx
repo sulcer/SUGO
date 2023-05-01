@@ -1,7 +1,4 @@
-import CookieConsent, {
-  getCookieConsentValue,
-  Cookies,
-} from 'react-cookie-consent';
+import CookieConsent, { Cookies } from 'react-cookie-consent';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
