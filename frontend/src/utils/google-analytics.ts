@@ -1,7 +1,5 @@
-import * as ReactGA from 'react-ga';
-
-export const initGA = (id: string) => {
-  if (process.env.NODE_ENV === 'production') {
-    ReactGA.initialize(id);
-  }
+export const page_view = (GA_MEASUREMENT_ID: string, url: string) => {
+  window.gtag('config', GA_MEASUREMENT_ID, {
+    page_path: url,
+  });
 };

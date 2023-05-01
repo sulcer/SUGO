@@ -114,6 +114,39 @@ const Index = () => {
             <li>Pravico do prenosljivosti podatkov</li>
           </ul>
         </ConsentNotice>
+        <ConsentNotice name={'PIŠKOTKI'}>
+          <p>
+            Piškotki so majhne tekstovne datoteke, ki se ob obisku spletne
+            strani prenesejo na vaš računalnik ali mobilno napravo. Spletna
+            stran uporablja piškotke storitve Google Analytics za analizo obiska
+            naše spletne strani. S pomočjo teh piškotkov se zbirajo statistični
+            podatki o uporabi spletnega mesta brez osebne prepoznave
+            obiskovalcev.{' '}
+          </p>
+          <table className={'table-auto my-8 w-full max-w-6xl'}>
+            <thead className={'bg-gray-200'}>
+              <tr
+                className={
+                  'border-b border-gray-300 text-gray-600 uppercase text-left p-4'
+                }
+              >
+                <th>Ime piškotka</th>
+                <th>Namen</th>
+                <th>Čas trajanja</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>_ga</td>
+                <td>
+                  Analitični piškotek, ki se uporablja za izračun podatkov o
+                  obisku spletnega mesta.v
+                </td>
+                <td>2 leti</td>
+              </tr>
+            </tbody>
+          </table>
+        </ConsentNotice>
       </div>
     </>
   );
