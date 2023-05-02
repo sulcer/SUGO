@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import disableScroll from 'disable-scroll';
 
 export function useLockBodyScroll() {
   useEffect((): (() => void) => {
@@ -7,10 +8,12 @@ export function useLockBodyScroll() {
 
     // Prevent scrolling on mount
     document.body.style.overflow = 'hidden';
+    disableScroll.on();
 
     // Re-enable scrolling when component unmounts
     return () => {
       document.body.style.overflow = originalStyle;
+      disableScroll.off();
     };
   }, []);
 }
