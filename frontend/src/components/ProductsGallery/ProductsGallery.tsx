@@ -18,7 +18,7 @@ const ProductsGallery:FC<ProductsGalleryProps> = ({ products }) => {
                     }
                 >
                     {products.map((product: any) => (
-                        <ProductImageCard src={product.attributes.image.data.attributes.url} alt={product.attributes.image.data.attributes.name} name={product.attributes.name} info={product.attributes.description} width={400} height={300} key={product.id}/>
+                        <ProductImageCard src={product.attributes.image.data.attributes.url} alt={product.attributes.image.data.attributes.name} name={product.attributes.name} info={product.attributes.description} width={500} height={300} key={product.id}/>
                     ))}
                 </div>
             </div>
