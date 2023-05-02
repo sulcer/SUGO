@@ -34,9 +34,9 @@ const Map = () => {
 const faq = [
   {
     question:
-      'Kakšna je vaša izkušnja pri izdelavi CNC izdelkov in katere materiale lahko obdelujete?',
+      'Kakšne izkušnje imate pri izdelavi CNC izdelkov in katere materiale lahko obdelujete?',
     answer:
-      'Imamo dolgoletne izkušnje pri izdelavi CNC izdelkov in lahko obdelujemo različne materiale, vključno z aluminijem, jeklom, nerjavno pločevino, plastiko, lesom in drugimi materiali.',
+      'Imamo dolgoletne izkušnje pri izdelavi CNC izdelkov in lahko obdelujemo različne materiale, vključno z aluminijem, jeklom, nerjavno pločevino, plastiko in drugimi materiali.',
   },
   {
     question: 'Kakšen je vaš proces naročanja in kakšen je vaš čas izdelave?',
@@ -47,7 +47,7 @@ const faq = [
     question:
       'Kakšna je vaša politika glede kakovosti izdelkov in kaj storite, če stranka ni zadovoljna z izdelki?',
     answer:
-      'Naše podjetje ima strog nadzor kakovosti in vsi naši izdelki so podvrženi strogim preizkusom, da se zagotovi njihova kakovost. Če stranka ni zadovoljna z izdelkom, bomo storili vse, kar je v naši moči, da jo popravimo ali nadomestimo izdelek.',
+      'Naše podjetje ima strog nadzor kakovosti in vsi naši izdelki so podvrženi strogim preizkusom, da se zagotovi njihova kakovost. Če stranka ni zadovoljna z izdelkom, bomo storili vse, kar je v naši moči, da to popravimo ali nadomestimo izdelek.',
   },
 ];
 
