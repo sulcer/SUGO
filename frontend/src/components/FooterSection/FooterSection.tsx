@@ -23,7 +23,7 @@ const FooterSection:FC<FooterSectionProps> = ({ title, items }) => {
                         {item.icon}
                         <p className="text-white text-sm opacity-80">
                             {!item.type && item.text}
-                            {item.type === FooterItemType.PHONE && <a href="tel:+386 2 7205 071">{item.text}</a>}
+                            {item.type === FooterItemType.PHONE && <a href={`tel:${item.text}`}>{item.text}</a>}
                             {item.type === FooterItemType.MAIL && <a href="mailto:cncgolob@gmail.com">{item.text}</a>}
                         </p>
                     </div>
