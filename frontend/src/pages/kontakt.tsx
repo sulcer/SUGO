@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { ContactForm } from '@/components';
 import Head from 'next/head';
 import { getContact } from '@/lib/api';
-import FaqAccordion from "@/components/FaqAccordion/FaqAccordion";
+import FaqAccordion from '@/components/FaqAccordion/FaqAccordion';
 
 interface ContactInfoProps {
   contact: {
@@ -41,7 +41,7 @@ const faq = [
   {
     question: 'Kakšen je vaš proces naročanja in kakšen je vaš čas izdelave?',
     answer:
-      'Naš proces naročanja je preprost in učinkovit. Stranka lahko odda naročilo preko naše spletne strani ali preko telefona. Naš čas izdelave je odvisen od obsega naročila, vrste materiala in zahtevnosti izdelka. Običajno pa lahko končamo manjša naročila v nekaj dneh, večja naročila pa lahko trajajo nekaj tednov',
+      'Naš proces naročanja je preprost in učinkovit. Stranka lahko odda naročilo preko naše spletne strani ali preko telefona. Naš čas izdelave je odvisen od obsega naročila, vrste materiala in zahtevnosti izdelka. Običajno pa lahko končamo manjša naročila v nekaj dneh, večja naročila pa lahko trajajo nekaj tednov.',
   },
   {
     question:
@@ -57,16 +57,13 @@ const ContactInfo: FC<ContactInfoProps> = ({ contact }) => {
       <div className={'mb-4'}>
         <h1 className={'font-bold text-3xl text-black'}>Kontaktirajte nas</h1>
         <div className="relative">
-          <div className="border-t border-white border-2 mb-5 w-32 blur-sm absolute"></div>
-          <div className="border-t border-white border-2 mb-5 w-32 absolute"></div>
+          <div className="border-t border-tint border-2 mb-5 w-32 absolute"></div>
         </div>
       </div>
 
-      <div className={'font-semibold text-black'}>
-          {contact.name}
-      </div>
+      <div className={'font-semibold text-black'}>{contact.name}</div>
       <div className={'text-black'}>
-          <b>Zastopnik:</b> {contact.representative}
+        <b>Zastopnik:</b> {contact.representative}
       </div>
       <div className={'text-black'}>
         <b>Naslov:</b> {contact.address}
@@ -96,29 +93,33 @@ const Contact: FC = (props: any) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>
-        <div
-          className={
-            'flex flex-col sm:grid sm:grid-cols-2 rounded border-2 border-accent3 m-4 sm:m-20'
-          }
-        >
-          <div className={'rounded p-4'}>
-            <ContactForm />
-          </div>
-          <div className={'flex flex-col bg-accent-3 text-white p-4'}>
-            <ContactInfo contact={props.contact.data.attributes.contact} />
-          </div>
+
+      <div
+        className={
+          'flex flex-col sm:grid sm:grid-cols-2 rounded border-2 border-accent3 m-4 sm:m-20'
+        }
+      >
+        <div className={'rounded p-4'}>
+          <ContactForm />
         </div>
-        <div className={'flex flex-col mx-4 mb-4 sm:mx-20 sm:mb-20 h-64'}>
-          <h1 className={'text-2xl font-bold mb-8'}>Pogosto zastavljena vprašanja</h1>
-          <div className={'flex flex-col sm:grid sm:grid-cols-3 gap-4'}>
-            {faq.map((item, index) => (
-                <div key={index}>
-                    <FaqAccordion question={item.question} answer={item.answer} />
-                </div>
-            ))}
-          </div>
+        <div className={'flex flex-col bg-accent-3 text-white p-4'}>
+          <ContactInfo contact={props.contact.data.attributes.contact} />
         </div>
+      </div>
+
+      <div className={'flex flex-col mx-4 mb-4 sm:mx-20 sm:mb-20'}>
+        <h1 className={'text-2xl font-bold mb-8'}>
+          Pogosto zastavljena vprašanja
+        </h1>
+        <div className={'flex flex-col'}>
+          {faq.map((item, index) => (
+            <div key={index}>
+              <FaqAccordion question={item.question} answer={item.answer} />
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className={'relative'}>
         <Map />
       </div>
     </>

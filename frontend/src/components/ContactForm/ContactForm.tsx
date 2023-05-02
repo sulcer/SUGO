@@ -1,31 +1,31 @@
 import React, { FC, FormEvent, useEffect, useState } from 'react';
 import Input from '@/components/ContactForm/Input';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
-import {motion} from "framer-motion"
+import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 export const ContactForm: FC = () => {
   const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('');
   const [text, setText] = useState('');
   const [verified, setVerified] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
   const { executeRecaptcha } = useGoogleReCaptcha();
 
-  const handleReCaptchaVerify = async () => {
-    if (!executeRecaptcha) {
-      console.log('Execute recaptcha not yet available');
-      return;
-    }
-
-    const token = await executeRecaptcha();
-    setVerified(!!token);
-  };
-
   useEffect(() => {
+    const handleReCaptchaVerify = async () => {
+      if (!executeRecaptcha) {
+        return;
+      }
+      const token = await executeRecaptcha();
+      setVerified(!!token);
+    };
+
     handleReCaptchaVerify();
     return () => {
       setVerified(false);
     };
-  }, [executeRecaptcha, handleReCaptchaVerify]);
+  }, [executeRecaptcha]);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -79,17 +79,34 @@ export const ContactForm: FC = () => {
           Sporočilo
         </label>
       </div>
+      <div className={'flex flex-row w-full'}>
+        <input
+          required
+          type={'checkbox'}
+          checked={isChecked}
+          onChange={() => setIsChecked(!isChecked)}
+        />
+        <p className={'ml-2 text-black text-sm'}>
+          Izjavljam, da sem seznanjen s vsebino{' '}
+          <Link href={'#'} className={'underline decoration-tint font-bold'}>
+            Izjave o varovanju osebnih podatkov
+          </Link>
+          ,ki vsebuje informacije o obdelavi osebnih podatkov s strani podjetja
+          Sugo d.o.o.
+        </p>
+      </div>
       <motion.div
-          className="box w-24"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          transition={{ type: "spring", stiffness: 400, damping: 15 }}>
+        className="box w-24"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        transition={{ type: 'spring', stiffness: 400, damping: 15 }}
+      >
         <button
-            disabled={!verified}
-            className={
-              'bg-accent text-white py-2 px-8 rounded w-full sm:w-fit disabled:opacity-90 disabled:cursor-not-allowed'
-            }
-            type="submit"
+          disabled={!verified}
+          className={
+            'bg-accent text-white py-2 px-8 rounded w-full sm:w-fit disabled:opacity-90 disabled:cursor-not-allowed'
+          }
+          type="submit"
         >
           Pošlji
         </button>
