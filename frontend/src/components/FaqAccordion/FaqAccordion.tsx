@@ -8,22 +8,7 @@ interface FaqAccordionProps {
 
 const FaqAccordion: FC<FaqAccordionProps> = ({ question, answer }) => {
   const [active, setActive] = useState<boolean>(false);
-  console.log(active);
   return (
-    // <div
-    //   className={`${
-    //     active ? 'h-full' : 'h-20'
-    //   } flex flex-col gap-2 bg-accent-3 rounded p-4 cursor-pointer`}
-    //   onClick={() => setActive(!active)}
-    // >
-    //   <div className={'flex flex-row font-bold gap-4 w-full'}>
-    //     <p className={'flex-grow'}>{question}</p>
-    //     <div className={'text-black'}>
-    //       {active ? <AiOutlineMinus /> : <AiOutlinePlus />}
-    //     </div>
-    //   </div>
-    //   {active && <p>{answer}</p>}
-    // </div>
     <div>
       <div
         className={'flex flex-col hover:bg-accent-3 px-2 py-4 '}
