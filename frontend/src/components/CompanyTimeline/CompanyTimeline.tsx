@@ -1,26 +1,26 @@
 import React, {FC} from 'react';
-import {HiOutlineCloud, HiOutlineCog8Tooth, HiOutlineHome, HiOutlineMapPin} from "react-icons/hi2";
+import {HiOutlineBuildingOffice2, HiOutlineCog8Tooth, HiOutlineHome, HiOutlineMapPin} from "react-icons/hi2";
 
 const timeline = [
     {
         icon: <HiOutlineHome size={20}/>,
-        text: "Ustanovitev podjetja",
-        year: 2000
+        text: "Ustanovitev Boštjan Golob s.p.",
+        year: 2010
+    },
+    {
+        icon: <HiOutlineBuildingOffice2 size={20}/>,
+        text: "Ustanovitev SUGO d.o.o",
+        year: 2019
     },
     {
         icon: <HiOutlineMapPin size={20}/>,
-        text: "Selitev podjetja",
-        year: 2010
+        text: "Selitev proizvodnje",
+        year: 2020
     },
     {
         icon: <HiOutlineCog8Tooth size={20}/>,
         text: "Posodobitev strojne opreme",
-        year: 2017
-    },
-    {
-        icon: <HiOutlineCloud size={20}/>,
-        text: "Posodobitev strojne opreme",
-        year: 2021,
+        year: 2022,
         present: true
     }
 ]
