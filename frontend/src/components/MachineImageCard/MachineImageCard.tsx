@@ -11,7 +11,6 @@ type MachineImageCardProps = {
   height: number;
 };
 
-//TODO image div/wrapper needs to be fixed
 const MachineImageCard = ({ src, alt, name, info, width, height }: MachineImageCardProps) => {
   return (
     <div className={styles.imageWrapper}>

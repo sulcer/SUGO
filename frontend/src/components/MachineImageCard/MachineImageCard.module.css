@@ -1,6 +1,7 @@
 .imageWrapper {
   position: relative;
   overflow: hidden;
+  border-radius: 5px;
 }
 .imageWrapper:hover {
   cursor: pointer;
