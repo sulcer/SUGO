@@ -6,9 +6,6 @@ interface ProductsGalleryProps {
 }
 
 const ProductsGallery:FC<ProductsGalleryProps> = ({ products }) => {
-
-    console.log(products[0]);
-
     return (
         <div className={'w-full bg-accent-3 mt-8 py-20'}>
             <div className={'mx-5 sm:mx-20'}>
