@@ -79,16 +79,17 @@ export const ContactForm: FC = () => {
           Sporočilo
         </label>
       </div>
-      <div className={'flex flex-row w-full'}>
+      <div className={'flex flex-row w-full items-start'}>
         <input
           required
           type={'checkbox'}
           checked={isChecked}
           onChange={() => setIsChecked(!isChecked)}
+          className={'mt-0.5'}
         />
-        <p className={'ml-2 text-black text-sm'}>
+        <p className={'ml-2 text-black text-xs opacity-50'}>
           Izjavljam, da sem seznanjen s vsebino{' '}
-          <Link href={'#'} className={'underline decoration-tint font-bold'}>
+          <Link href={'#'} className={'font-bold'}>
             Izjave o varovanju osebnih podatkov
           </Link>
           ,ki vsebuje informacije o obdelavi osebnih podatkov s strani podjetja

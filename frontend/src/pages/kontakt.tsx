@@ -53,14 +53,13 @@ const faq = [
 
 const ContactInfo: FC<ContactInfoProps> = ({ contact }) => {
   return (
-    <div className={'flex flex-col gap-2 ml-10 my-8'}>
+    <div className={'flex flex-col gap-2 ml-5 my-8'}>
       <div className={'mb-4'}>
         <h1 className={'font-bold text-3xl text-black'}>Kontaktirajte nas</h1>
         <div className="relative">
           <div className="border-t border-tint border-2 mb-5 w-32 absolute"></div>
         </div>
       </div>
-
       <div className={'font-semibold text-black'}>{contact.name}</div>
       <div className={'text-black'}>
         <b>Zastopnik:</b> {contact.representative}
