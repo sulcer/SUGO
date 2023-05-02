@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import {FaFacebook} from 'react-icons/fa';
-import {HiPhone, HiPrinter, HiOutlineEnvelope, HiOutlineBuildingOffice2, HiOutlineMapPin, HiOutlineHome, HiOutlineGlobeEuropeAfrica} from 'react-icons/hi2';
+import {HiPhone, HiOutlineEnvelope, HiOutlineBuildingOffice2, HiOutlineMapPin, HiOutlineHome, HiOutlineGlobeEuropeAfrica} from 'react-icons/hi2';
 import FooterSection from "@/components/FooterSection/FooterSection";
 import {FooterItemType} from "@/types/types";
 import Link from "next/link";
@@ -31,12 +31,12 @@ const secondMenuSection = {
     items: [
         {
             icon: <HiPhone className="text-white opacity-80"/>,
-            text: "+386 40 123 456",
+            text: "+386 31 876 138",
             type: FooterItemType.PHONE
         },
         {
-            icon: <HiPrinter className="text-white opacity-80"/>,
-            text: "+386 40 123 456",
+            icon: <HiPhone className="text-white opacity-80"/>,
+            text: "+386 31 557 929",
             type: FooterItemType.PHONE
         },
         {

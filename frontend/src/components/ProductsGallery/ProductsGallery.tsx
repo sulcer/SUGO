@@ -6,9 +6,6 @@ interface ProductsGalleryProps {
 }
 
 const ProductsGallery:FC<ProductsGalleryProps> = ({ products }) => {
-
-    console.log(products[0]);
-
     return (
         <div className={'w-full bg-accent-3 mt-8 py-20'}>
             <div className={'mx-5 sm:mx-20'}>
@@ -18,7 +15,7 @@ const ProductsGallery:FC<ProductsGalleryProps> = ({ products }) => {
                     }
                 >
                     {products.map((product: any) => (
-                        <ProductImageCard src={product.attributes.image.data.attributes.url} alt={product.attributes.image.data.attributes.name} name={product.attributes.name} info={product.attributes.description} width={400} height={300} key={product.id}/>
+                        <ProductImageCard src={product.attributes.image.data.attributes.url} alt={product.attributes.image.data.attributes.name} name={product.attributes.name} info={product.attributes.description} width={500} height={300} key={product.id}/>
                     ))}
                 </div>
             </div>
