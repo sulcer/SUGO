@@ -3,7 +3,7 @@ import {FooterItemType} from "@/types/types";
 
 interface FooterSectionProps {
     title?: string;
-    items: { icon: JSX.Element; text: string, type?: FooterItemType }[];
+    items: { icon?: JSX.Element; text: string, type?: FooterItemType }[];
 }
 const FooterSection:FC<FooterSectionProps> = ({ title, items }) => {
     return (

@@ -2,13 +2,10 @@ import Head from 'next/head';
 import { About, Gallery, Services, Strengths, Thumbnail } from '@/components';
 import { getAbout, getGallery } from '@/lib/api';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import {useRouter} from "next/router";
 import {useTranslation} from "next-i18next";
-import Link from "next/link";
 import {Locale} from "@/types/types";
 
 export default function Home(props: any) {
-  const router = useRouter()
   const { t } = useTranslation('common')
 
   return (
@@ -24,16 +21,6 @@ export default function Home(props: any) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Thumbnail />
-        <div>{t('current_locale')}: {t(`${router.locale}`)}</div>
-        <div>
-            <Link
-                href='/'
-                locale={router.locale === 'en' ? 'de' : 'en'}>
-                <button>
-                    {t('change_locale')}
-                </button>
-            </Link>
-        </div>
       <Services />
       <Strengths />
       <About about={props.about.data.attributes.about} />
