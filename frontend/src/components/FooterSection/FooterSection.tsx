@@ -13,7 +13,7 @@ const FooterSection:FC<FooterSectionProps> = ({ title, items }) => {
                     <p className="text-white font-bold mb-0.5 text-lg">{title}</p>
                     <div className="relative">
                         <div className="border-t border-white border-2 mb-5 w-16 blur-sm absolute"></div>
-                        <div className="border-t border-white border-2 mb-5 w-16 relative absolute"></div>
+                        <div className="border-t border-white border-2 mb-5 w-16 relative"></div>
                     </div>
                 </>
             }

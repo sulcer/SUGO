@@ -56,28 +56,29 @@ const ContactInfo: FC<ContactInfoProps> = ({ contact }) => {
     <div className={'flex flex-col gap-2 ml-5 my-8'}>
       <div className={'mb-4'}>
         <h1 className={'font-bold text-3xl text-black'}>Kontaktirajte nas</h1>
-        <div className="relative">
-          <div className="border-t border-tint border-2 mb-5 w-32 absolute"></div>
-        </div>
+          <div className="relative">
+              <div className="border-t border-tint border-2 mb-5 w-60 blur-sm absolute"></div>
+              <div className="border-t border-white border-2 mb-5 w-60 relative"></div>
+          </div>
       </div>
       <div className={'font-semibold text-black'}>{contact.name}</div>
       <div className={'text-black'}>
-        <b>Zastopnik:</b> {contact.representative}
+          <b>Zastopnik:</b> <span className={'text-accent opacity-90'}>{contact.representative}</span>
       </div>
       <div className={'text-black'}>
-        <b>Naslov:</b> {contact.address}
+          <b>Naslov:</b> <span className={'text-accent opacity-90'}>{contact.address}</span>
       </div>
       <div className={'text-black'}>
-        <b>Telefon:</b> {contact.phone}
+          <b>Telefon:</b> <span className={'text-accent opacity-90'}>{contact.phone}</span>
       </div>
       <div className={'text-black'}>
-        <b>E-pošta:</b> {contact.email}
+          <b>E-pošta:</b> <span className={'text-accent opacity-90'}>{contact.email}</span>
       </div>
       <div className={'text-black'}>
-        <b>Davčna številka:</b> {contact.taxNumber}
+          <b>Davčna številka:</b> <span className={'text-accent opacity-90'}>{contact.taxNumber}</span>
       </div>
       <div className={'text-black'}>
-        <b>Matična številka:</b> {contact.registrationNumber}
+          <b>Matična številka:</b> <span className={'text-accent opacity-90'}>{contact.registrationNumber}</span>
       </div>
     </div>
   );
