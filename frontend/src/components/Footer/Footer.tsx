@@ -64,8 +64,8 @@ const Footer:FC = () => {
                     <Link
                         className={'opacity-80 hover:opacity-100'}
                         href='/'
-                        locale={router.locale = 'en'}>
-                        <button>SLO</button>
+                        locale={router.locale = 'sl'}>
+                        <button>SL</button>
                     </Link>
                     <Link
                         className={'opacity-80 hover:opacity-100'}

@@ -11,7 +11,7 @@ export default function Home(props: any) {
   return (
     <>
       <Head>
-        <title>SUGO d.o.o</title>
+        <title>{t('sugo')}</title>
         <meta name="robots" content="all" />
         <meta
           name="description"
