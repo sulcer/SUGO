@@ -22,7 +22,11 @@ const NavigationLink: FC<PropsWithChildren & { link?: string }> = ({
 const MobileNavMenu: FC<{ closeSelf: () => void }> = ({ closeSelf }) => {
   const { t } = useTranslation('common');
 
-  const routes = [t('menu-item1'), t('menu-item2'), t('menu-item3')];
+  const routes = [
+    {"name": t('menu-item1'), "nav": "strojni-park"},
+    {"name": t('menu-item2'), "nav": "izdelki"},
+    {"name": t('menu-item3'), "nav": "kontakt"},
+  ];
   useLockBodyScroll();
 
   return (
@@ -45,17 +49,17 @@ const MobileNavMenu: FC<{ closeSelf: () => void }> = ({ closeSelf }) => {
               'flex flex-col list-none gap-10 items-baseline text-xl mb-10'
             }
           >
-            {routes.map((navLink: string, index: number) => (
+            {routes.map((navLink, index: number) => (
               <li key={index} className={'block w-full'} onClick={closeSelf}>
                 <NavigationLink
-                  link={navLink.toLowerCase().split(' ').join('-')}
+                  link={navLink.nav.toLowerCase().split(' ').join('-')}
                 >
                   <div
                     className={
                       'hover:text-gray-900 py-6 flex flex-row justify-between items-center'
                     }
                   >
-                    <span>{navLink}</span>
+                    <span>{navLink.name}</span>
                     <MdChevronRight className={'h-8 w-auto'} />
                   </div>
                 </NavigationLink>
@@ -72,7 +76,11 @@ const Header = () => {
   const [mobileMenuIsShown, setMobileMenuIsShown] = useState(false);
   const { t } = useTranslation('common');
 
-  const routes = [t('menu-item1'), t('menu-item2'), t('menu-item3')];
+  const routes = [
+    {"name": t('menu-item1'), "nav": "strojni-park"},
+    {"name": t('menu-item2'), "nav": "izdelki"},
+    {"name": t('menu-item3'), "nav": "kontakt"},
+  ];
 
   return (
     <>
@@ -90,9 +98,9 @@ const Header = () => {
             {routes.map((route, index) => (
               <NavigationLink
                 key={index}
-                link={route.toLowerCase().split(' ').join('-')}
+                link={route.nav.toLowerCase().split(' ').join('-')}
               >
-                {route}
+                {route.name}
               </NavigationLink>
             ))}
           </div>
