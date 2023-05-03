@@ -11,6 +11,7 @@ module.exports = {
         'accent-3': '#f5f5f5',
         'accent-4': '#f5f8fe',
         tint: '#0045f6',
+        'tint-2': '#494949',
       },
       transformOrigin: {
         0: '0%',

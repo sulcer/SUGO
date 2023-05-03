@@ -18,7 +18,7 @@ const FaqAccordion: FC<FaqAccordionProps> = ({ question, answer }) => {
           <p className={'flex-grow'}>{question}</p>
           {active ? <AiOutlinePlus /> : <AiOutlineMinus />}
         </div>
-        {active && <p>{answer}</p>}
+        {active && <p className={'text-tint-2 mt-1'}>{answer}</p>}
       </div>
 
       <div className={'bg-accent h-[1px] w-full'} />

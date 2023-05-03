@@ -13,7 +13,7 @@ const About:FC<AboutProps> = ({ about }) => {
             <div className="flex flex-row flex-wrap justify-between">
                 <div className="w-full lg:w-4/6 flex flex-col gap-5">
                     {chunkSubstr(about).map((sentenceGroup, index) => (
-                        <p key={index} className="text-lg">{sentenceGroup}</p>
+                        <p key={index} className="text-lg text-tint-2">{sentenceGroup}</p>
                     ))}
                 </div>
                 <CompanyTimeline />

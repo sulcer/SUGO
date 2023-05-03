@@ -20,14 +20,14 @@ const ServicesCounter:FC = () => {
         <div className="w-12 h-12 flex justify-center items-center">
           <div ref={countUpRef} className="font-bold text-2xl" />
         </div>
-        <p className="text-sm mt-1">let na trgu</p>
+        <p className="text-sm mt-1 text-tint-2">let na trgu</p>
       </div>
       <div className={'w-full h-[1px] sm:h-16 sm:w-[1px] bg-accent-4'} />
       <div className="flex flex-col items-center">
         <div className="w-12 h-12 flex justify-center items-center">
           <CountUp enableScrollSpy end={6} className="font-bold text-2xl"/>
         </div>
-        <p className="text-sm mt-1">strojev</p>
+        <p className="text-sm mt-1 text-tint-2">strojev</p>
       </div>
       <div className={'w-full h-[1px] sm:h-16 sm:w-[1px] bg-accent-4'} />
       <div className="flex flex-col items-center">
@@ -40,7 +40,7 @@ const ServicesCounter:FC = () => {
             suffix="+"
           />
         </div>
-        <p className="text-sm mt-1">projektov</p>
+        <p className="text-sm mt-1 text-tint-2">projektov</p>
       </div>
     </div>
   );

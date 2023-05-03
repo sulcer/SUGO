@@ -63,22 +63,22 @@ const ContactInfo: FC<ContactInfoProps> = ({ contact }) => {
       </div>
       <div className={'font-semibold text-black'}>{contact.name}</div>
       <div className={'text-black'}>
-          <b>Zastopnik:</b> <span className={'text-accent opacity-90'}>{contact.representative}</span>
+          <b>Zastopnik:</b> <span className={'text-accent text-tint-2'}>{contact.representative}</span>
       </div>
       <div className={'text-black'}>
-          <b>Naslov:</b> <span className={'text-accent opacity-90'}>{contact.address}</span>
+          <b>Naslov:</b> <span className={'text-accent text-tint-2'}>{contact.address}</span>
       </div>
       <div className={'text-black'}>
-          <b>Telefon:</b> <span className={'text-accent opacity-90'}>{contact.phone}</span>
+          <b>Telefon:</b> <span className={'text-accent text-tint-2'}>{contact.phone}</span>
       </div>
       <div className={'text-black'}>
-          <b>E-pošta:</b> <span className={'text-accent opacity-90'}>{contact.email}</span>
+          <b>E-pošta:</b> <span className={'text-accent text-tint-2'}>{contact.email}</span>
       </div>
       <div className={'text-black'}>
-          <b>Davčna številka:</b> <span className={'text-accent opacity-90'}>{contact.taxNumber}</span>
+          <b>Davčna številka:</b> <span className={'text-accent text-tint-2'}>{contact.taxNumber}</span>
       </div>
       <div className={'text-black'}>
-          <b>Matična številka:</b> <span className={'text-accent opacity-90'}>{contact.registrationNumber}</span>
+          <b>Matična številka:</b> <span className={'text-accent text-tint-2'}>{contact.registrationNumber}</span>
       </div>
     </div>
   );

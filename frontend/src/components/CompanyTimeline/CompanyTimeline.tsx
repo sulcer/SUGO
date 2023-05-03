@@ -36,7 +36,7 @@ const CompanyTimeline:FC = () => {
                         </div>
                         <div className="flex flex-col justify-center">
                             <p className="font-bold text-xs">{item.year}</p>
-                            <p className="text-sm">{item.text}</p>
+                            <p className="text-sm text-tint-2">{item.text}</p>
                         </div>
                     </div>
                     {!item.present && <div className="h-14 w-0.5 bg-gray-500 ml-8 opacity-30 my-0.5"/>}

@@ -14,8 +14,8 @@ const ConsentNotice = ({
   return (
     <>
       <div className={'mx-20 flex flex-col'}>
-        <h1 className={'text-xl font-bold'}>{name}</h1>
-        {desc ? <p className={'text-md'}>{desc}</p> : children}
+        <h1 className={'text-lg font-bold mb-3 text-tint-2'}>{name}</h1>
+        {desc ? <p className={'text-md text-tint-2'}>{desc}</p> : children}
       </div>
     </>
   );
@@ -49,22 +49,22 @@ const Index = () => {
           }
         />
         <ConsentNotice name={'UPRAVLJALEC PODATKOV'}>
-          <p>
+          <p className={'text-tint-2'}>
             Upravljavec osebnih podatkov v okviru te spletne strani po predpisih
             Splošne uredbe o varstvu podatkov:
           </p>
           <ul className={'list-disc pl-10 pt-3'}>
             <li>
-              <p>Podjetje SUGO d.o.o.</p>
+              <p className={'text-tint-2'}>Podjetje SUGO d.o.o.</p>
             </li>
             <li>
-              <p>Spodnji Jakobski Dol 45</p>
+              <p className={'text-tint-2'}>Spodnji Jakobski Dol 45</p>
             </li>
             <li>
-              <p>2222 Jakobski dol</p>
+              <p className={'text-tint-2'}>2222 Jakobski dol</p>
             </li>
             <li>
-              <p>Slovenija</p>
+              <p className={'text-tint-2'}>Slovenija</p>
             </li>
           </ul>
         </ConsentNotice>
@@ -84,13 +84,13 @@ const Index = () => {
         />
 
         <ConsentNotice name={'KONTAKTNI OBRAZEC'}>
-          <p>
+          <p className={'text-tint-2'}>
             Na naši spletni strani lahko izpolnite spletni kontaktni obrazec za
             izvedbo povpraševanj. V ta namen SUGO d.o.o., od vas zbira naslednje
             podatke, ki jih posredujete na prostovoljen način:
           </p>
           <ul className={'list-disc pl-10 pt-3'}>
-            <li>Elektronski naslov</li>
+            <li className={'text-tint-2'}>Elektronski naslov</li>
           </ul>
         </ConsentNotice>
         <ConsentNotice
@@ -100,22 +100,22 @@ const Index = () => {
           }
         />
         <ConsentNotice name={'PRAVICE POSAMEZNIKA'}>
-          <p>
+          <p className={'text-tint-2'}>
             V skladu z določili Splošne uredbe EU o varstvu osebnih podatkov
             (GDPR) imate do svojih podatkov pravico dostopati kadarkoli. Poleg
             tega lahko, če so izpolnjene določene zahteve, uveljavljate spodaj
             navedene pravice:
           </p>
           <ul className={'list-disc pl-10 pt-3'}>
-            <li>Pravico do popravka</li>
-            <li>Pravico do izbrisa</li>
-            <li>Pravico do omejitve obdelave</li>
-            <li>Pravico do pritožbe</li>
-            <li>Pravico do prenosljivosti podatkov</li>
+            <li className={'text-tint-2'}>Pravico do popravka</li>
+            <li className={'text-tint-2'}>Pravico do izbrisa</li>
+            <li className={'text-tint-2'}>Pravico do omejitve obdelave</li>
+            <li className={'text-tint-2'}>Pravico do pritožbe</li>
+            <li className={'text-tint-2'}>Pravico do prenosljivosti podatkov</li>
           </ul>
         </ConsentNotice>
         <ConsentNotice name={'PIŠKOTKI'}>
-          <p>
+          <p className={'text-tint-2'}>
             Piškotki so majhne tekstovne datoteke, ki se ob obisku spletne
             strani prenesejo na vaš računalnik ali mobilno napravo. Spletna
             stran uporablja piškotke storitve Google Analytics za analizo obiska
@@ -130,19 +130,19 @@ const Index = () => {
                   'border-b border-gray-300 text-gray-600 uppercase text-left p-4'
                 }
               >
-                <th>Ime piškotka</th>
-                <th>Namen</th>
-                <th>Čas trajanja</th>
+                <th className={'text-tint-2'}>Ime piškotka</th>
+                <th className={'text-tint-2'}>Namen</th>
+                <th className={'text-tint-2'}>Čas trajanja</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>_ga</td>
-                <td>
+                <td className={'text-tint-2'}>_ga</td>
+                <td className={'text-tint-2'}>
                   Analitični piškotek, ki se uporablja za izračun podatkov o
                   obisku spletnega mesta
                 </td>
-                <td className={'text-center'}>2 leti</td>
+                <td className={'text-center text-tint-2'}>2 leti</td>
               </tr>
             </tbody>
           </table>
