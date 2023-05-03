@@ -89,7 +89,7 @@ export const ContactForm: FC = () => {
         />
         <p className={'ml-2 text-black text-xs opacity-50'}>
           Izjavljam, da sem seznanjen s vsebino{' '}
-          <Link href={'#'} className={'font-bold'}>
+          <Link href="/varovanje-osebnih-podatkov" className={'font-bold'}>
             Izjave o varovanju osebnih podatkov
           </Link>
           ,ki vsebuje informacije o obdelavi osebnih podatkov s strani podjetja

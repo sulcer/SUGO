@@ -140,9 +140,9 @@ const Index = () => {
                 <td>_ga</td>
                 <td>
                   Analitični piškotek, ki se uporablja za izračun podatkov o
-                  obisku spletnega mesta.v
+                  obisku spletnega mesta
                 </td>
-                <td>2 leti</td>
+                <td className={'text-center'}>2 leti</td>
               </tr>
             </tbody>
           </table>
