@@ -73,7 +73,7 @@ export const ContactForm: FC = () => {
         />
         <label
           className={
-            'absolute top-1.5 ml-2 -z-1 bg-transparent duration-300 origin-0 text-black'
+            'absolute top-1.5 ml-2 -z-1 bg-transparent duration-300 origin-0 text-tint-2'
           }
         >
           Sporočilo
