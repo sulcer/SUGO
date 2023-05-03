@@ -20,7 +20,7 @@ const Products = (props: any) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <motion.div animate={{ x: 0 }} initial={{ x: -100, speed: 5}}>
-          <Headline description={t('products-text')} title={t('products-text')} />
+          <Headline description={t('products-text')} title={t('products')} />
       </motion.div>
       <ProductsGallery products={props.products.data} />
     </>
