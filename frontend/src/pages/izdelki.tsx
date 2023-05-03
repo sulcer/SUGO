@@ -4,8 +4,13 @@ import { ProductsGallery } from '@/components';
 import Headline from '@/components/Headline/Headline';
 import {motion} from "framer-motion";
 import {getProducts} from "@/lib/api";
+import {useTranslation} from "next-i18next";
+import {Locale} from "@/types/types";
+import {serverSideTranslations} from "next-i18next/serverSideTranslations";
 
 const Products = (props: any) => {
+  const { t } = useTranslation('common');
+
   return (
     <>
       <Head>
@@ -15,7 +20,7 @@ const Products = (props: any) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <motion.div animate={{ x: 0 }} initial={{ x: -100, speed: 5}}>
-          <Headline description={'Naši izdelki'} title={'Izdelki'} />
+          <Headline description={t('products-text')} title={t('products-text')} />
       </motion.div>
       <ProductsGallery products={props.products.data} />
     </>
@@ -24,11 +29,12 @@ const Products = (props: any) => {
 
 export default Products;
 
-export async function getStaticProps() {
-  const products = await getProducts();
+export async function getStaticProps({ locale }: Locale) {
+  const products = await getProducts({locale});
 
   return {
     props: {
+      ...await serverSideTranslations(locale, ['common']),
       products,
     },
   };

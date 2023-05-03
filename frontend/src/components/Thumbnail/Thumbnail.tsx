@@ -3,15 +3,17 @@ import { FC } from 'react';
 import Image from 'next/image';
 import { motion } from "framer-motion"
 import thumbnail from '../../assets/thumbnail.png';
+import {useTranslation} from "next-i18next";
 
 const Thumbnail: FC = () => {
+  const { t } = useTranslation('common');
+
   return (
     <div className={styles.Container}>
       <div className={styles.Info}>
           <motion.div animate={{ x: 0 }} initial={{ x: -100, speed: 5 }}>
-              <h1 className={`${styles.Title}`}>Mehanska obdelava kovin in druge storitve
-              </h1>
-              <p className={`${styles.Description}`}>Kakovostne storitve za vaše inovativne ideje</p>
+              <h1 className={`${styles.Title}`}>{t('thumbnail')}</h1>
+              <p className={`${styles.Description}`}>{t('description')}</p>
           </motion.div>
       </div>
       <div className={styles.radialContainer}></div>

@@ -3,3 +3,7 @@ export enum FooterItemType {
     MAIL = 'MAIL',
     PHONE = 'PHONE',
 }
+
+export type Locale = {
+    locale: string;
+}

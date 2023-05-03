@@ -3,6 +3,7 @@ import Input from '@/components/ContactForm/Input';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import {useTranslation} from "next-i18next";
 
 export const ContactForm: FC = () => {
   const [email, setEmail] = useState('');
@@ -11,6 +12,7 @@ export const ContactForm: FC = () => {
   const [verified, setVerified] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
   const { executeRecaptcha } = useGoogleReCaptcha();
+  const { t } = useTranslation('common');
 
   useEffect(() => {
     const handleReCaptchaVerify = async () => {
@@ -48,13 +50,13 @@ export const ContactForm: FC = () => {
   return (
     <form className={'flex flex-col w gap-6'} onSubmit={handleSubmit}>
       <Input
-        label={'E-pošta'}
+        label={t('firm-email') as string}
         required
         value={email}
         onChange={(e) => setEmail(e.currentTarget.value)}
       />
       <Input
-        label={'Zadeva'}
+        label={t('subject') as string}
         required
         value={subject}
         onChange={(e) => setSubject(e.currentTarget.value)}
@@ -76,7 +78,7 @@ export const ContactForm: FC = () => {
             'absolute top-1.5 ml-2 -z-1 bg-transparent duration-300 origin-0 text-tint-2'
           }
         >
-          Sporočilo
+          {t('message')}
         </label>
       </div>
       <div className={'flex flex-row w-full items-start'}>
@@ -88,12 +90,11 @@ export const ContactForm: FC = () => {
           className={'mt-0.5'}
         />
         <p className={'ml-2 text-black text-xs opacity-50'}>
-          Izjavljam, da sem seznanjen s vsebino{' '}
+          {t('GDPR-form1')}{' '}
           <Link href="/varovanje-osebnih-podatkov" className={'font-bold'}>
-            Izjave o varovanju osebnih podatkov
+            {t('GDPR-form2')}
           </Link>
-          ,ki vsebuje informacije o obdelavi osebnih podatkov s strani podjetja
-          Sugo d.o.o.
+          {t('GDPR-form3')}
         </p>
       </div>
       <motion.div
@@ -109,7 +110,7 @@ export const ContactForm: FC = () => {
           }
           type="submit"
         >
-          Pošlji
+          {t('send')}
         </button>
       </motion.div>
     </form>

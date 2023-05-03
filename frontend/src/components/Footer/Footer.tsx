@@ -4,58 +4,61 @@ import {HiPhone, HiOutlineEnvelope, HiOutlineBuildingOffice2, HiOutlineMapPin, H
 import FooterSection from "@/components/FooterSection/FooterSection";
 import {FooterItemType} from "@/types/types";
 import Link from "next/link";
-
-const firstMenuSection = {
-    title: "PODJETJE",
-    items: [
-        {
-            icon: <HiOutlineBuildingOffice2 className="text-white opacity-80"/>,
-            text: "SUGO d.o.o"
-        },
-        {
-            icon: <HiOutlineMapPin className="text-white opacity-80"/>,
-            text: "Spodnji Jakobski Dol 45"
-        },
-        {
-            icon: <HiOutlineHome className="text-white opacity-80"/>,
-            text: "2222 Jakobski dol"
-        },
-        {
-            icon: <HiOutlineGlobeEuropeAfrica className="text-white opacity-80"/>,
-            text: "Slovenija"
-        }]
-}
-
-const secondMenuSection = {
-    title: "KONTAKT",
-    items: [
-        {
-            icon: <HiPhone className="text-white opacity-80"/>,
-            text: "+386 31 876 138",
-            type: FooterItemType.PHONE
-        },
-        {
-            icon: <HiPhone className="text-white opacity-80"/>,
-            text: "+386 31 557 929",
-            type: FooterItemType.PHONE
-        },
-        {
-            icon: <HiOutlineEnvelope className="text-white opacity-80"/>,
-            text: "cncgolob@gmail.com",
-            type: FooterItemType.MAIL
-        }]
-}
-
-const thirdMenuSection = {
-    items: [
-        {
-            icon: <FaFacebook className="text-white opacity-80"/>,
-            text: "SUGO d.o.o"
-        }
-    ]
-}
+import {useTranslation} from "next-i18next";
 
 const Footer:FC = () => {
+    const { t } = useTranslation('common');
+
+    const firstMenuSection = {
+        title: t('firm'),
+        items: [
+            {
+                icon: <HiOutlineBuildingOffice2 className="text-white opacity-80"/>,
+                text: t('sugo')
+            },
+            {
+                icon: <HiOutlineMapPin className="text-white opacity-80"/>,
+                text: t('address')
+            },
+            {
+                icon: <HiOutlineHome className="text-white opacity-80"/>,
+                text: t('postal')
+            },
+            {
+                icon: <HiOutlineGlobeEuropeAfrica className="text-white opacity-80"/>,
+                text: t('country')
+            }]
+    }
+
+    const secondMenuSection = {
+        title: t('contact'),
+        items: [
+            {
+                icon: <HiPhone className="text-white opacity-80"/>,
+                text: t('phone'),
+                type: FooterItemType.PHONE
+            },
+            {
+                icon: <HiPhone className="text-white opacity-80"/>,
+                text: t('phone2'),
+                type: FooterItemType.PHONE
+            },
+            {
+                icon: <HiOutlineEnvelope className="text-white opacity-80"/>,
+                text: t('mail'),
+                type: FooterItemType.MAIL
+            }]
+    }
+
+    const thirdMenuSection = {
+        items: [
+            {
+                icon: <FaFacebook className="text-white opacity-80"/>,
+                text: t('sugo')
+            }
+        ]
+    }
+
     return (
         <div className="bg-accent rounded-t-lg">
             <div className="flex flex-row justify-between px-20 pt-20 flex-wrap">
@@ -65,12 +68,12 @@ const Footer:FC = () => {
             </div>
             <div className="border-t border-white mt-20 opacity-50"/>
             <div className='flex justify-between mx-20 py-3'>
-                <p className="text-white text-center text-xs opacity-80">© 2023 SUGO d.o.o. Vse pravice pridržane.</p>
+                <p className="text-white text-center text-xs opacity-80">{t('watermark')}</p>
                 <Link
                     href="/varovanje-osebnih-podatkov"
                     className="text-white text-center text-xs opacity-80 hover:opacity-100"
                 >
-                    Izjava o varovanju osebnih podatkov
+                    {t('GDPR')}
                 </Link>
             </div>
         </div>

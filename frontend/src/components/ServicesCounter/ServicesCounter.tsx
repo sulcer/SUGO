@@ -1,7 +1,9 @@
 import React, { FC } from 'react';
 import CountUp, { useCountUp } from 'react-countup';
+import {useTranslation} from "next-i18next";
 
 const ServicesCounter:FC = () => {
+  const { t } = useTranslation('common');
   const countUpRef = React.useRef(null);
   useCountUp({
     ref: countUpRef,
@@ -20,14 +22,14 @@ const ServicesCounter:FC = () => {
         <div className="w-12 h-12 flex justify-center items-center">
           <div ref={countUpRef} className="font-bold text-2xl" />
         </div>
-        <p className="text-sm mt-1 text-tint-2">let na trgu</p>
+        <p className="text-sm mt-1 text-tint-2">{t('on_market')}</p>
       </div>
       <div className={'w-full h-[1px] sm:h-16 sm:w-[1px] bg-accent-4'} />
       <div className="flex flex-col items-center">
         <div className="w-12 h-12 flex justify-center items-center">
           <CountUp enableScrollSpy end={6} className="font-bold text-2xl"/>
         </div>
-        <p className="text-sm mt-1 text-tint-2">strojev</p>
+        <p className="text-sm mt-1 text-tint-2">{t('machines')}</p>
       </div>
       <div className={'w-full h-[1px] sm:h-16 sm:w-[1px] bg-accent-4'} />
       <div className="flex flex-col items-center">
@@ -40,7 +42,7 @@ const ServicesCounter:FC = () => {
             suffix="+"
           />
         </div>
-        <p className="text-sm mt-1 text-tint-2">projektov</p>
+        <p className="text-sm mt-1 text-tint-2">{t('projects')}</p>
       </div>
     </div>
   );

@@ -1,31 +1,34 @@
 import React, {FC} from 'react';
 import {HiOutlineBuildingOffice2, HiOutlineCog8Tooth, HiOutlineHome, HiOutlineMapPin} from "react-icons/hi2";
-
-const timeline = [
-    {
-        icon: <HiOutlineHome size={20}/>,
-        text: "Ustanovitev Boštjan Golob s.p.",
-        year: 2010
-    },
-    {
-        icon: <HiOutlineBuildingOffice2 size={20}/>,
-        text: "Ustanovitev SUGO d.o.o",
-        year: 2019
-    },
-    {
-        icon: <HiOutlineMapPin size={20}/>,
-        text: "Selitev proizvodnje",
-        year: 2020
-    },
-    {
-        icon: <HiOutlineCog8Tooth size={20}/>,
-        text: "Posodobitev strojne opreme",
-        year: 2022,
-        present: true
-    }
-]
+import {useTranslation} from "next-i18next";
 
 const CompanyTimeline:FC = () => {
+    const { t } = useTranslation('common');
+
+    const timeline = [
+        {
+            icon: <HiOutlineHome size={20}/>,
+            text: t('founder'),
+            year: 2010
+        },
+        {
+            icon: <HiOutlineBuildingOffice2 size={20}/>,
+            text: t('firm_start'),
+            year: 2019
+        },
+        {
+            icon: <HiOutlineMapPin size={20}/>,
+            text: t('firm_relocation'),
+            year: 2020
+        },
+        {
+            icon: <HiOutlineCog8Tooth size={20}/>,
+            text: t('machine_purchase'),
+            year: 2022,
+            present: true
+        }
+    ]
+
     return (
         <div className="mt-8 sm:mt-0">
             {timeline.map((item, index) => (

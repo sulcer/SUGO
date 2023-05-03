@@ -5,8 +5,9 @@ import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import Head from 'next/head';
 import GoogleAnalytics from '@/components/CookieBanner/GoogleAnalytics';
 import CookieConsentBanner from '@/components/CookieBanner/CookieConsentBanner';
+import { appWithTranslation } from 'next-i18next';
 
-export default function App({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
@@ -27,3 +28,5 @@ export default function App({ Component, pageProps }: AppProps) {
     </>
   );
 }
+
+export default appWithTranslation(App);

@@ -2,26 +2,12 @@ import React, { FC, useRef } from 'react';
 import { classNames } from '@/utils/classNames';
 import styles from './ServiceSection.module.scss';
 import { useInView } from 'framer-motion';
+import {useTranslation} from "next-i18next";
 
 type ServiceItemProps = {
   name: string;
   text: string;
 };
-
-const services: ServiceItemProps[] = [
-  {
-    name: 'Struženje',
-    text: 'Precizna obdelava kovin za natančne rezultate in visoko kakovostne izdelke.',
-  },
-  {
-    name: 'Rezkanje',
-    text: 'Uporaba vrhunske opreme za natančno rezkanje kovin za vaše posebne zahteve',
-  },
-  {
-    name: 'Svetovanje',
-    text: 'Naše strokovno svetovanje vam pomaga doseči vaše cilje s kovinsko obdelavo.',
-  },
-];
 
 const ServiceItem = ({ name, text }: ServiceItemProps) => {
   const ref = useRef(null);
@@ -44,12 +30,29 @@ const ServiceItem = ({ name, text }: ServiceItemProps) => {
 };
 
 const ServicesSection: FC = () => {
+  const { t } = useTranslation('common');
+
+  const services: ServiceItemProps[] = [
+    {
+      name: t('service1'),
+      text: t('service1text'),
+    },
+    {
+      name: t('service2'),
+      text: t('service2text'),
+    },
+    {
+      name: t('service3'),
+      text: t('service3text'),
+    },
+  ];
+
   return (
     <div className={'bg-accent-3'}>
       <div className={'flex flex-col sm:mx-20 py-10 gap-7'}>
         <div className={'mb-2 text-center sm:text-end'}>
-          <h1 className={'text-3xl font-bold'}>Storitve</h1>
-          <p className={'text-lg'}>Naše storitve in dejavnosti</p>
+          <h1 className={'text-3xl font-bold'}>{t('services')}</h1>
+          <p className={'text-lg'}>{t('services_text')}</p>
         </div>
         <div
           className={classNames(

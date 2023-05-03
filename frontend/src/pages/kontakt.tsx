@@ -3,6 +3,9 @@ import { ContactForm } from '@/components';
 import Head from 'next/head';
 import { getContact } from '@/lib/api';
 import FaqAccordion from '@/components/FaqAccordion/FaqAccordion';
+import {useTranslation} from "next-i18next";
+import {Locale} from "@/types/types";
+import {serverSideTranslations} from "next-i18next/serverSideTranslations";
 
 interface ContactInfoProps {
   contact: {
@@ -31,31 +34,13 @@ const Map = () => {
   );
 };
 
-const faq = [
-  {
-    question:
-      'Kakšne izkušnje imate pri izdelavi CNC izdelkov in katere materiale lahko obdelujete?',
-    answer:
-      'Imamo dolgoletne izkušnje pri izdelavi CNC izdelkov in lahko obdelujemo različne materiale, vključno z aluminijem, jeklom, nerjavno pločevino, plastiko in drugimi materiali.',
-  },
-  {
-    question: 'Kakšen je vaš proces naročanja in kakšen je vaš čas izdelave?',
-    answer:
-      'Naš proces naročanja je preprost in učinkovit. Stranka lahko odda naročilo preko naše spletne strani ali preko telefona. Naš čas izdelave je odvisen od obsega naročila, vrste materiala in zahtevnosti izdelka. Običajno pa lahko končamo manjša naročila v nekaj dneh, večja naročila pa lahko trajajo nekaj tednov.',
-  },
-  {
-    question:
-      'Kakšna je vaša politika glede kakovosti izdelkov in kaj storite, če stranka ni zadovoljna z izdelki?',
-    answer:
-      'Naše podjetje ima strog nadzor kakovosti in vsi naši izdelki so podvrženi strogim preizkusom, da se zagotovi njihova kakovost. Če stranka ni zadovoljna z izdelkom, bomo storili vse, kar je v naši moči, da to popravimo ali nadomestimo izdelek.',
-  },
-];
-
 const ContactInfo: FC<ContactInfoProps> = ({ contact }) => {
+  const { t } = useTranslation('common');
+
   return (
     <div className={'flex flex-col gap-2 ml-5 my-8'}>
       <div className={'mb-4'}>
-        <h1 className={'font-bold text-3xl text-black'}>Kontaktirajte nas</h1>
+        <h1 className={'font-bold text-3xl text-black'}>{t('contact-us')}</h1>
           <div className="relative">
               <div className="border-t border-tint border-2 mb-5 w-60 blur-sm absolute"></div>
               <div className="border-t border-white border-2 mb-5 w-60 relative"></div>
@@ -63,28 +48,45 @@ const ContactInfo: FC<ContactInfoProps> = ({ contact }) => {
       </div>
       <div className={'font-semibold text-black'}>{contact.name}</div>
       <div className={'text-black'}>
-          <b>Zastopnik:</b> <span className={'text-accent text-tint-2'}>{contact.representative}</span>
+          <b>{t('stakeholder')}:</b> <span className={'text-accent text-tint-2'}>{contact.representative}</span>
       </div>
       <div className={'text-black'}>
-          <b>Naslov:</b> <span className={'text-accent text-tint-2'}>{contact.address}</span>
+          <b>{t('firm-address')}:</b> <span className={'text-accent text-tint-2'}>{contact.address}</span>
       </div>
       <div className={'text-black'}>
-          <b>Telefon:</b> <span className={'text-accent text-tint-2'}>{contact.phone}</span>
+          <b>{t('firm-phone')}:</b> <span className={'text-accent text-tint-2'}>{contact.phone}</span>
       </div>
       <div className={'text-black'}>
-          <b>E-pošta:</b> <span className={'text-accent text-tint-2'}>{contact.email}</span>
+          <b>{t('firm-email')}:</b> <span className={'text-accent text-tint-2'}>{contact.email}</span>
       </div>
       <div className={'text-black'}>
-          <b>Davčna številka:</b> <span className={'text-accent text-tint-2'}>{contact.taxNumber}</span>
+          <b>{t('tax-number')}:</b> <span className={'text-accent text-tint-2'}>{contact.taxNumber}</span>
       </div>
       <div className={'text-black'}>
-          <b>Matična številka:</b> <span className={'text-accent text-tint-2'}>{contact.registrationNumber}</span>
+          <b>{t('registration-number')}:</b> <span className={'text-accent text-tint-2'}>{contact.registrationNumber}</span>
       </div>
     </div>
   );
 };
 
 const Contact: FC = (props: any) => {
+  const { t } = useTranslation('common');
+
+    const faq = [
+        {
+            question: t('faq1'),
+            answer: t('faq1answer'),
+        },
+        {
+            question: t('faq2'),
+            answer: t('faq2answer'),
+        },
+        {
+            question: t('faq3'),
+            answer: t('faq3answer'),
+        },
+    ];
+
   return (
     <>
       <Head>
@@ -108,9 +110,7 @@ const Contact: FC = (props: any) => {
       </div>
 
       <div className={'flex flex-col mx-4 mb-4 sm:mx-20 sm:mb-20'}>
-        <h1 className={'text-2xl font-bold mb-8'}>
-          Pogosto zastavljena vprašanja
-        </h1>
+        <h1 className={'text-2xl font-bold mb-8'}>{t('faq')}</h1>
         <div className={'flex flex-col'}>
           {faq.map((item, index) => (
             <div key={index}>
@@ -128,11 +128,12 @@ const Contact: FC = (props: any) => {
 
 export default Contact;
 
-export async function getStaticProps() {
+export async function getStaticProps({ locale }: Locale) {
   const contact = await getContact();
 
   return {
     props: {
+      ...await serverSideTranslations(locale, ['common']),
       contact,
     },
   };

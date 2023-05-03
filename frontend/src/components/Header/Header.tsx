@@ -4,11 +4,9 @@ import { FC, PropsWithChildren, useState } from 'react';
 import { classNames } from '@/utils/classNames';
 import styles from './Header.module.scss';
 import Logo from '@/assets/logo-sugo.png';
-import { useRouter } from 'next/router';
 import { useLockBodyScroll } from '@/utils/hooks';
 import { MdChevronRight, MdClose, MdMenu } from 'react-icons/md';
-
-const routes = ['Strojni park', 'Izdelki', 'Kontakt'];
+import {useTranslation} from "next-i18next";
 
 const NavigationLink: FC<PropsWithChildren & { link?: string }> = ({
   children,
@@ -22,7 +20,11 @@ const NavigationLink: FC<PropsWithChildren & { link?: string }> = ({
 };
 
 const MobileNavMenu: FC<{ closeSelf: () => void }> = ({ closeSelf }) => {
+  const { t } = useTranslation('common');
+
+  const routes = [t('menu-item1'), t('menu-item2'), t('menu-item3')];
   useLockBodyScroll();
+
   return (
     <div
       className={'w-screen h-screen fixed top-0 left-0 bg-white z-10 pb-6 p-4'}
@@ -67,9 +69,11 @@ const MobileNavMenu: FC<{ closeSelf: () => void }> = ({ closeSelf }) => {
 };
 
 const Header = () => {
-  const router = useRouter();
-  const { locale, locales } = router;
   const [mobileMenuIsShown, setMobileMenuIsShown] = useState(false);
+  const { t } = useTranslation('common');
+
+  const routes = [t('menu-item1'), t('menu-item2'), t('menu-item3')];
+
   return (
     <>
       {!mobileMenuIsShown ? (
