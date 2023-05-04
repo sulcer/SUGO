@@ -94,5 +94,10 @@
   "cookies-text2": "Analytical cookie used to calculate website visit data",
   "cookies-text3": "2 years",
   "gdpr": "Protection of personal data",
-  "gdpr-headline": "Statement on the protection of personal data"
+  "gdpr-headline": "Statement on the protection of personal data",
+  "cookie1": "The website uses cookies",
+  "cookie2": "Our website uses cookies. By continuing to view the website, you agree to the use of cookies.",
+  "cookie3": "More information!",
+  "cookieAccept": "Accept",
+  "cookieReject": "Decline"
 }

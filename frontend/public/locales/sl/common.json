@@ -94,5 +94,10 @@
   "cookies-text2": "Analitični piškotek, ki se uporablja za izračun podatkov o obisku spletnega mesta",
   "cookies-text3": "2 leti",
   "gdpr": "Varovanje osebnih podatkov",
-  "gdpr-headline": "Izjava o varovanju osebnih podatkov"
+  "gdpr-headline": "Izjava o varovanju osebnih podatkov",
+  "cookie1": "Spletna stran uporablja piškotke",
+  "cookie2": "Naša spletna stran uporablja piškotke. Z nadaljevanjem ogleda spletne strani se strinjate z uporabo piškotkov.",
+  "cookie3": "Več informacij!",
+  "cookieAccept": "Se strinjam",
+  "cookieReject": "Zavrni"
 }

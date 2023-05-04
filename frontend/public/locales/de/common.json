@@ -94,5 +94,10 @@
   "cookies-text2": "Analytisches Cookie, das zur Berechnung von Website-Besuchsdaten verwendet wird",
   "cookies-text3": "2 Jahre",
   "gdpr": "Schutz personenbezogener Daten",
-  "gdpr-headline": "Erklärung zum Schutz personenbezogener Daten"
+  "gdpr-headline": "Erklärung zum Schutz personenbezogener Daten",
+  "cookie1": "Die Website verwendet Cookies",
+  "cookie2": "Unsere Website verwendet Cookies. Indem Sie die Website weiterhin besuchen, stimmen Sie der Verwendung von Cookies zu.",
+  "cookie3": "Mehr erfahren",
+  "cookieAccept": "Akzeptieren",
+  "cookieReject": "Ablehnen"
 }
