@@ -51,6 +51,7 @@ export const ContactForm: FC = () => {
     <form className={'flex flex-col w gap-6'} onSubmit={handleSubmit}>
       <Input
         label={t('firm-email') as string}
+        type={"email"}
         required
         value={email}
         onChange={(e) => setEmail(e.currentTarget.value)}
