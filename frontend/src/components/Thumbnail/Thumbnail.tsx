@@ -10,7 +10,7 @@ const Thumbnail: FC = () => {
 
   return (
     <div className={styles.Container}>
-      <div className={styles.Info}>
+      <div className={`${styles.Info} md:px-10 lg:px-0 px-0`}>
           <motion.div animate={{ x: 0 }} initial={{ x: -100, speed: 5 }}>
               <h1 className={`${styles.Title}`}>{t('thumbnail')}</h1>
               <p className={`${styles.Description}`}>{t('description')}</p>
@@ -18,7 +18,7 @@ const Thumbnail: FC = () => {
       </div>
       <div className={styles.radialContainer}></div>
       <Image src={thumbnail}
-             alt={'test'}
+             alt={'thumbnail'}
              className={'mx-auto w-[75%] sm:mt-10'}
              quality={100}
       />
