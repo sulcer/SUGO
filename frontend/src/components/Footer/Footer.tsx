@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {HiPhone, HiOutlineEnvelope, HiOutlineBuildingOffice2, HiOutlineMapPin, HiOutlineHome, HiOutlineGlobeEuropeAfrica, HiOutlineCalculator} from 'react-icons/hi2';
+import {HiPhone, HiOutlineEnvelope, HiOutlineBuildingOffice2, HiOutlineMapPin, HiOutlineHome, HiOutlineGlobeEuropeAfrica} from 'react-icons/hi2';
 import FooterSection from "@/components/FooterSection/FooterSection";
 import {FooterItemType} from "@/types/types";
 import Link from "next/link";
@@ -51,21 +51,11 @@ const Footer:FC = () => {
             }]
     }
 
-    const thirdMenuSection = {
-        items: [
-            {
-                icon: <HiOutlineCalculator className="text-white opacity-80"/>,
-                text: '59203676',
-            }
-        ]
-    }
-
     return (
         <div className="bg-accent rounded-t-lg">
             <div className="flex flex-row justify-between px-20 pt-20 flex-wrap">
                 <FooterSection title={firstMenuSection.title} items={firstMenuSection.items}/>
                 <FooterSection title={secondMenuSection.title} items={secondMenuSection.items}/>
-                <FooterSection items={thirdMenuSection.items}/>
             </div>
             <div className="border-t border-white mt-20 opacity-50"/>
             <div className='flex justify-between mx-20 py-3'>
