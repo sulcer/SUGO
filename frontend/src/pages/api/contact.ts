@@ -23,10 +23,10 @@ export default async function handler(
     const { to, subject, text } = req.body;
 
     const mailOptions = {
-      from: process.env.EMAIL,
-      to,
+      from: to,
+      to: process.env.EMAIL,
       subject,
-      text,
+      text: `${text}\n\nFrom: ${to}`,
     };
 
     try {
