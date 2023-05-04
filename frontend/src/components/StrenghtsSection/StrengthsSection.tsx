@@ -25,7 +25,7 @@ const StrengthsSection:FC= () => {
             transition: "all cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
           }}
         className={
-          'flex flex-col sm:flex-row justify-center gap-10 sm:gap-20 bg-white border-[1px] w-fit border-accent-4 rounded-md shadow-md p-8'
+          'flex flex-col sm:flex-row justify-center gap-10 md:gap-5 sm:gap-20 bg-white border-[1px] w-fit border-accent-4 rounded-md shadow-md p-8'
         }
       >
         <div className={'flex flex-row gap-3 sm:w-1/3 group'}>

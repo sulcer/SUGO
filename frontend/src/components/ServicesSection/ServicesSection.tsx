@@ -24,7 +24,7 @@ const ServiceItem = ({ name, text }: ServiceItemProps) => {
       className={'flex flex-col gap-7 items-center sm:text-end z-0'}
     >
       <h2 className={'font-semibold text-lg'}>{name}</h2>
-      <p className={'text-sm text-gray-600 max-w-xs text-start'}>{text}</p>
+      <p className={'text-sm text-gray-600 max-w-xs text-center'}>{text}</p>
     </div>
   );
 };
