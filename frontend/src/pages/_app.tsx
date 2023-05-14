@@ -12,7 +12,6 @@ function App({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>SUGO d.o.o</title>
-        <meta name="robots" content="all" />
       </Head>
       <GoogleReCaptchaProvider
         reCaptchaKey={process.env.NEXT_PUBLIC_SITE_KEY as string}
